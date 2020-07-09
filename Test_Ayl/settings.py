@@ -71,7 +71,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Test_Ayl.wsgi.application'
 
-
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+        },
+    },
+}
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -120,3 +134,16 @@ USE_TZ = False    # 这里修改了
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 邮件服务配置文件
+EMAIL_USE_SSL = True
+# 邮箱服务
+EMAIL_HOST = 'smtp.qq.com'
+# 端口号
+EMAIL_PORT = 465
+# 账号
+EMAIL_HOST_USER = '122903166@qq.com'
+# 授权秘钥 密钥要在QQ邮箱内开启IMAP/SMTP服务会获得
+EMAIL_HOST_PASSWORD = 'ahovrotvonzibiei'
+# 发件人
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
