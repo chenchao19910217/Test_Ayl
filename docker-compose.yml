@@ -1,6 +1,6 @@
 version: "3"
 services:
-  Test_Aly:
+  test_aly:
     build:
       ./
     command:
