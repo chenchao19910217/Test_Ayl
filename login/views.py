@@ -5,7 +5,6 @@ import hashlib,os
 
 
 from django.shortcuts import render
-
 from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -62,7 +61,6 @@ def login(request):
             except:
                 message = '用户不存在！'
                 return render(request, 'login/login.html', locals())
-
             if user.password == password:
                 request.session['is_login'] = True
                 request.session['user_id'] = user.id

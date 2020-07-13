@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-import requests,unittest,logging,time,os,json,sys,urllib3,logging
+import requests,unittest,logging,time,os,json,urllib3,logging
 
 from retrying import retry
 
@@ -9,7 +9,7 @@ from Dcc.testapi.core.core import TestCaseCore,log
 
 urllib3.disable_warnings()
 
-class TestCaseLogin():#登录接口
+class dcc_login(unittest.TestCase):#登录接口
 
 
     logger = logging.getLogger(__name__)
@@ -25,7 +25,7 @@ class TestCaseLogin():#登录接口
 
     @log
     @retry(stop_max_attempt_number=3)
-    def dcc_Logins(self):
+    def dcc_Login(self):
 
         request = requests.Session()
         url = 'https://api.test.douchacha.com/api/user/login?ts=1592989548316&he=wrEGbQ5swobCh3bCtw8swp7DgcOUw4DDtlFmbz91wq4zFg%3D%3D&sign=112bce861670e6af'
@@ -47,7 +47,7 @@ class TestCaseLogin():#登录接口
         }
 
         response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
-
+        self.logger.error('test %s pass!' %url)
         print(type(response.json()['data']['token']))
         url = 'https://api.test.douchacha.com/api/user/info'
         header = {
@@ -65,10 +65,11 @@ class TestCaseLogin():#登录接口
         }
         response = request.get(url,headers=header)
         print(response.json())
+        self.logger.error('test %s pass!' % url)
 
     @log
     def CaseLivingRunner(self):
-        self.dcc_Logins()
+        self.dcc_Login()
 
     def tearDown(self):
         pass
@@ -76,7 +77,7 @@ class TestCaseLogin():#登录接口
 
 if __name__ == "__main__":
 
-    CaseLiving = TestCaseLogin()
+    CaseLiving = dcc_login()
     reports = CaseLiving.CaseLivingRunner()
 
     print(reports)

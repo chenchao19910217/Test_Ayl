@@ -1,13 +1,148 @@
-<!DOCTYPE html>
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>首页</title>#}
+{#</head>#}
+{#<body>#}
+{#<h1>{{ request.session.user_name }}!  欢迎回来！</h1>#}
+{#<p>#}
+{#    <a href="/login/logout/">登出</a>#}
+{#</p>#}
+{#</body>#}
+{#</html>#}
+
+{% load static %}
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>首页</title>
-</head>
-<body>
-<h1>{{ request.session.user_name }}!  欢迎回来！</h1>
-<p>
-    <a href="/login/logout/">登出</a>
-</p>
-</body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 上述meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'login/css/login.css' %}" rel="stylesheet"/>
+    <title>抖查查测试平台</title>
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">{{ request.session.user_name }}</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="#">项目</a>
+    <a class="p-2 text-dark" href="#">测试列表</a>
+    <a class="p-2 text-dark" href="#">测试工具</a>
+    <a class="p-2 text-dark" href="#">测试报告</a>
+  </nav>
+  <a class="btn btn-outline-primary" href="/login/logout/">退出</a>
+</div>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-10">抖查查测试后台</h1>
+  <p class="lead">平台提供 前端性能测试、接口自动化测试、服务端性能测试，app自动化测试，后续持续更新更多工具</p>
+</div>
+
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">web前端性能测试</h4>
+      </div>
+      <div class="card-body">
+
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>测试后给出网站性能评分</li>
+          <li>从F~A，A是最好的</li>
+          <li>我们的标准是消灭C-F所有问题</li>
+          <li>扫描34个影响网页性能的规则</li>
+        </ul>
+        <a class="btn btn-lg btn-block btn-outline-primary" href="/Dcc/webyh/">提交测试</a>
+
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">接口自动化测试</h4>
+      </div>
+      <div class="card-body">
+
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>不支持前端编辑</li>
+          <li>可以对项目所有接口进行测试</li>
+          <li>标准是没有报错</li>
+          <li>所有测试用例为后端编辑</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-primary">更新中</button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">性能压测工具</h4>
+      </div>
+      <div class="card-body">
+
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>采用locust完成压测</li>
+          <li>不支持前端编辑</li>
+          <li>拥有完善得报告界面</li>
+          <li>所有测试用例为后端编辑</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-primary">更新中</button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">接口自动化测试</h4>
+      </div>
+      <div class="card-body">
+
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>不支持前端编辑</li>
+          <li>可以对项目所有接口进行测试</li>
+          <li>标准是没有报错</li>
+          <li>所有测试用例为后端编辑</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-primary">更新中</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+
+        <small class="d-block mb-3 text-muted">&copy; 2020-2022</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>工具地址</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">站长工具</a></li>
+          <li><a class="text-muted" href="#">手机号平台</a></li>
+
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>教程地址</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Django</a></li>
+          <li><a class="text-muted" href="#">python</a></li>
+
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>测试通过标准</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">BUG等级</a></li>
+          <li><a class="text-muted" href="#">压测标准</a></li>
+           <li><a class="text-muted" href="#">帮助手册</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.15.0/umd/popper.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  </body>
 </html>

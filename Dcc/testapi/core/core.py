@@ -12,7 +12,7 @@ def log(func):
         logger.setLevel(logging.INFO)  # Log等级总开关
         # 第二步，创建一个handler，用于写入日志文件
         # rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
-        log_path = os.path.dirname(os.getcwd()) + '/Logs/'
+        log_path = os.path.dirname(os.getcwd()) + '/Test_Ayl/Dcc/testapi/Logs/'
         log_name = log_path + func.__name__ + '.log'
         logfile = log_name
         print(logfile)

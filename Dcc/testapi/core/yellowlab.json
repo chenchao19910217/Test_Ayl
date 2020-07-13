@@ -1,0 +1,44 @@
+[
+    {
+        "config": {
+            "name": "testcase description",
+            "variables": {}
+        }
+    },
+    {
+        "test": {
+            "name": "/api/runs",
+            "request": {
+                "url": "https://yellowlab.tools/api/runs",
+                "method": "POST",
+                "headers": {
+                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36",
+                    "content-type": "application/json;charset=UTF-8",
+                    "sec-fetch-site": "same-origin",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-dest": "empty"
+                },
+                "json": {
+                    "url": "https://www.douchacha.com/pay",
+                    "waitForResponse": false,
+                    "screenshot": true,
+                    "device": "desktop"
+                }
+            },
+            "validate": [
+                {
+                    "eq": [
+                        "status_code",
+                        200
+                    ]
+                },
+                {
+                    "eq": [
+                        "content.runId",
+                        "fp8xc9ec6x"
+                    ]
+                }
+            ]
+        }
+    }
+]
