@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82a7e75e-d734-470c-895c-be224c7f3a09" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Dcc/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dcc/migrations/0002_apilist.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dcc/migrations/0003_reportlist.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dcc/migrations/0004_reportlist_reportclass.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dcc/templates/Dcc/caseadd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dcc/templates/Dcc/caseapi_index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Dcc/templates/Dcc/caseedit.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Dcc/templates/Dcc/report_index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Dcc/templates/Dcc/report_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dcc/templates/Dcc/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dcc/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dcc/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dcc/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dcc/models.py" afterDir="false" />
@@ -475,12 +482,12 @@
       <workItem from="1594714967521" duration="1499000" />
       <workItem from="1594806168123" duration="83482000" />
       <workItem from="1595213488129" duration="18987000" />
-      <workItem from="1595298599131" duration="77032000" />
+      <workItem from="1595298599131" duration="77148000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266423000" />
+    <option name="totallyTimeSpent" value="266539000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -493,13 +500,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1656017" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1656017" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32970297" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.64749736" visible="true" weight="0.32079208" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.64749736" weight="0.32079208" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49840257" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -507,8 +513,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.35250267" side_tool="true" visible="true" weight="0.32079208" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4946752" weight="0.280198" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5058573" side_tool="true" visible="true" weight="0.280198" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4941427" visible="true" weight="0.280198" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32970297" />
       <window_info anchor="bottom" id="Structure" order="13" weight="0.24950495" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
