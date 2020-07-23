@@ -17,6 +17,7 @@ def hash_code(s, salt='mysite'):# 加点盐
     s += salt
     h.update(s.encode())  # update方法只接收bytes类型
     return h.hexdigest()
+
 def index(request):
     if not request.session.get('is_login', None):
         return redirect('/login/login/')
@@ -75,7 +76,6 @@ def login(request):
     login_form = forms.UserForm()
     return render(request, 'login/login.html', locals())
 
-
 def register(request):
     if request.session.get('is_login', None):
         return redirect('/login/login/')
@@ -115,7 +115,6 @@ def register(request):
             return render(request, 'login/register.html', locals())
     register_form = forms.RegisterForm()
     return render(request, 'login/register.html', locals())
-
 
 def logout(request):
     if not request.session.get('is_login', None):

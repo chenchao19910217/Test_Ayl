@@ -48,6 +48,7 @@ class dcc_login(unittest.TestCase):#登录接口
 
         response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
         self.logger.error('test %s pass!' %url)
+        print (response.json())
         print(type(response.json()['data']['token']))
         url = 'https://api.test.douchacha.com/api/user/info'
         header = {
