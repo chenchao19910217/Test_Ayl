@@ -1,5 +1,12 @@
 version: "3"
 services:
+  test_crontab:
+    build:
+      ./
+    command:
+      python manage.py crontab add
+    image:
+      test_aly:latest
   test_aly:
     build:
       ./
@@ -7,13 +14,6 @@ services:
       python manage.py runserver 0.0.0.0:8080
     ports:
       - "80:8080"
-    image:
-      test_aly:latest
-  test_crontab:
-    build:
-      ./
-    command:
-      python manage.py crontab add
     image:
       test_aly:latest
 
