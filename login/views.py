@@ -56,7 +56,7 @@ def login(request):
         if login_form.is_valid():
             username = login_form.cleaned_data.get('username')
             password = login_form.cleaned_data.get('password')
-            print(username,password)
+            # print(username,password)
             try:
                 user = models.User.objects.get(name=username)
             except:

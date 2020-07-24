@@ -63,7 +63,7 @@ class Core():#核心复用方法
             for key in contrast:
                 # print('1111111',parsing)
                 # print('2222222', expected_value)
-                print(key)
+                # print(key)
                 exec("par_value_temp = parsing%s" % key)
                 parsin=loc['par_value_temp']
                 exec("expected_value_temp = expected_value%s" % key)
@@ -128,9 +128,9 @@ if __name__ == "__main__":
     r = '(["code"],["msg"],["data"]["user"])'
     temp = r.replace('(', '').replace(')', '')
     a = tuple([str(i) for i in temp.split(',')])
-    print(type(ps))
-    print(type(ps2))
-    print(a)
+    # print(type(ps))
+    # print(type(ps2))
+    # print(a)
     c=Core()
     c.inerface_contrast(a,ps,ps2)
 

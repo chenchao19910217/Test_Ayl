@@ -191,8 +191,8 @@
                 function(data,status){
                     data_Response=Array.from(JSON.parse(data));
                     for (let i=0;i<data_Response.length;i++){
-                         console.log(data_Response[i].Caserequest);
-                         console.log(data_Response[i].Casereplace);
+                         {#console.log(data_Response[i].Caserequest);#}
+                         {#console.log(data_Response[i].Casereplace);#}
                          $(".Caseurl"+JSON.stringify(i)).val(data_Response[i].Caseurl);
                          $(".Casebody"+JSON.stringify(i)).val(data_Response[i].Casebody);
                          $(".Caseheaders"+JSON.stringify(i)).val(data_Response[i].Caseheaders);
@@ -234,9 +234,9 @@
             Items_list.Casenames=$(".Casename").val();
             request_cases['Items_list']=Items_list
             request_cases['caselist']=caselist
-            console.log(request_cases)
+            {#console.log(request_cases)#}
             request_cases_s = JSON.stringify(request_cases)
-            console.log(request_cases_s)
+            {#console.log(request_cases_s)#}
                 $.post("/Dcc/case_update/",{
                     request_cases_s,
                     case_ids
@@ -244,7 +244,7 @@
                 function(data,status){
                     data=JSON.parse(data);
                     if (data['code']==='404'){
-                     console.log(data,status);
+                     {#console.log(data,status);#}
                       alert(data['message']);
                     }
                     else{
@@ -267,7 +267,7 @@
                 };
             for (let i=0;i<=ar;i++)
                 {
-                    console.log(i)
+                    {#console.log(i)#}
                     let newcase  = {};
                     newcase.Caseurl=$(".Caseurl"+i).val();
                     newcase.Caserequest=$(".Caserequest"+i).val();
@@ -277,7 +277,7 @@
                     newcase.Casedeliver=$(".Casedeliver"+i).val();
                     newcase.Casekey=$(".Casekey"+i).val();
                     newcase.Casereplace=$(".replace"+i).val();
-                    console.log($(".replace"+i).val())
+                    {#console.log($(".replace"+i).val())#}
                     caselist[i] = newcase;
                 }
                 caselist_s = JSON.stringify(caselist)
@@ -330,21 +330,21 @@
             Items_list.Releases=$(".Release").val();
             Items_list.Moduless=$(".Modules").val();
             Items_list.Casenames=$(".Casename").val();
-            console.log(caselist)
-            console.log(Items_list)
+            {#console.log(caselist)#}
+            {#console.log(Items_list)#}
             request_cases['Items_list']=Items_list
             request_cases['caselist']=caselist
-            console.log(request_cases)
+            {#console.log(request_cases)#}
             request_cases_s = JSON.stringify(request_cases)
-            console.log("a:"+typeof(request_cases_s));
-            console.log(request_cases_s)
+            {#console.log("a:"+typeof(request_cases_s));#}
+            {#console.log(request_cases_s)#}
                 $.post("/Dcc/casesave/",{
                     request_cases_s
                 },
                 function(data,status){
                     data=JSON.parse(data);
                     if (data['code']==='404'){
-                     console.log(data,status);
+                     {#console.log(data,status);#}
                       alert(data['message']);
                     }
                     else{

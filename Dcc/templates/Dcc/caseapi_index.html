@@ -36,7 +36,6 @@
   </nav>
   <a class="btn btn-outline-primary" href="/login/index/">返回</a>
 </div>
-{{ ccccc }}
 <div class="row ">
     <div class="col-md-20  container">
         <form class="form-inline" action="/Dcc/searchcase/" method="post">
@@ -124,12 +123,12 @@
 
                 };
             var checkedsss = $(":checked");
-            console.log(checkedsss);
+            {#console.log(checkedsss);#}
             for (let i=0;i<checkedsss.length;i++){
-                console.log(checkedsss[i].name);
+                {#console.log(checkedsss[i].name);#}
                 caselist[i]=checkedsss[i].name
             }
-            console.log(caselist);
+            {#console.log(caselist);#}
             caselist_s = JSON.stringify(caselist);
             user_names = JSON.stringify(user_name);
              $.post("/Dcc/testlist_index/",{
@@ -137,7 +136,7 @@
                     user_names
                 },
                 function(data,status){
-                   console.log(data)
+                   {#console.log(data)#}
                 });
             alert('结果请在测试报告中查询');
         }
@@ -166,7 +165,7 @@
                 function(data,status){
                  data=JSON.parse(data)
                  ccccc=data
-                    console.log(ccccc)
+                    {#console.log(ccccc)#}
                 });
         }
 

@@ -88,14 +88,14 @@
             reportnames = $(".reportname").val();
             reportclass_s = JSON.stringify(reportclass);
             reportnames_s = JSON.stringify(reportnames);
-             console.log(reportnames_s);
-              console.log(reportclass_s);
+             {#console.log(reportnames_s);#}
+             {# console.log(reportclass_s);#}
              $.post("/Dcc/searchreport/",{
                      reportclass_s,
                      reportnames_s
                 },
                 function(data,status){
-                   console.log(data)
+                   {#console.log(data)#}
                 });
         }
     </script>

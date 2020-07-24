@@ -477,10 +477,10 @@ def case_edit(request):
     if request.method == 'POST':
         caseapi_return = []
         caselist = request.POST.get('caselist_s')
-        print(caselist)
+        # print(caselist)
         case = models.apilist.objects.get(case_id=caselist)
         case = eval(case.caselists.replace(' ', '').replace(r'\n', ''))
-        print(type(case))
+        # print(type(case))
         for x in case:
             caseapi_return.append(case[x])
         print(caseapi_return)
@@ -511,7 +511,7 @@ def case_update(request):
     if request.method == 'POST':
         caselist = request.POST.get('request_cases_s')
         case_ids = request.POST.get('case_ids')
-        print('case_ids',case_ids)
+        # print('case_ids',case_ids)
         caselist = caselist
         caselist = json.loads(caselist)
         case_ids = json.loads(case_ids)
@@ -532,14 +532,14 @@ def case_update(request):
             oldcase.caselists = caselists
             oldcase.save()
 
-            print({'code': '200', 'message': '添加成功'})
+            # print({'code': '200', 'message': '添加成功'})
             return HttpResponse(json.dumps({'code': '200', 'message': '更新成功'}))
         except:
-            print({'code': '404', 'message': '已经存在相同用例可以到用例集更新用例'})
+            # print({'code': '404', 'message': '已经存在相同用例可以到用例集更新用例'})
             return HttpResponse(json.dumps({'code': '404', 'message': '更新失败'}))
 
     else:
-        print({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'})
+        # print({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'})
         return HttpResponse(json.dumps({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'}))
 
 @csrf_exempt
@@ -568,7 +568,7 @@ def case_report(request):
                 'reportname': report[index].reportname,
                 'go': report[index].report_id
             }
-        print(caseapi_return)
+        # print(caseapi_return)
         return render(request, 'Dcc/report_list.html', locals())
 
 
@@ -597,15 +597,15 @@ def case_report_index(request):
         report = models.reportlist.objects.get(report_id=report_id)
         reportname=report.reportname
         reportclass=report.reportclass
-        print(report)
-        print(report.reportclass)
-        print(report.reportname)
+        # print(report)
+        # print(report.reportclass)
+        # print(report.reportname)
         index = eval(report.report)
-        print(index)
+        # print(index)
         for n in range(len(index)):
-            print(index[n])
+            # print(index[n])
             caseapi_return['equipment'][n]=index[n]
-        print(caseapi_return)
+        # print(caseapi_return)
         # for reports in range(len(index)):
         #     caseapi_return['equipment'][index] = {
         #         'reportclass': report[index].reportclass,
@@ -628,10 +628,10 @@ def searchcase(request):
 
         apilist = models.apilist()
 
-        print(len(Item))
-        print(len(Release))
-        print(len(Modules))
-        print(len(Casename))
+        # print(len(Item))
+        # print(len(Release))
+        # print(len(Modules))
+        # print(len(Casename))
 
 
         if len(Item)==0 and len(Release)==0 and len(Modules)==0 and len(Casename)==0:
@@ -657,10 +657,10 @@ def searchcase(request):
                     'edit': case[index].case_id,
                     'go': case[index].case_id
                 }
-            print(caseapi_return)
+            # print(caseapi_return)
             return render(request, 'Dcc/caseapi_index.html', locals())
         elif len(Item)>0:
-            print("111111111111")
+            # print("111111111111")
             caseapi_return = {
                 "code": '',
                 "msg": '',
@@ -684,7 +684,7 @@ def searchcase(request):
                     'edit': case[index].case_id,
                     'go': case[index].case_id
                 }
-            print(caseapi_return)
+            # print(caseapi_return)
             return render(request, 'Dcc/caseapi_index.html', locals())
 
         elif len(Release)>0:
@@ -711,7 +711,7 @@ def searchcase(request):
                     'edit': case[index].case_id,
                     'go': case[index].case_id
                 }
-            print(caseapi_return)
+            # print(caseapi_return)
             return render(request, 'Dcc/caseapi_index.html', locals())
 
         elif len(Modules)>0:
@@ -738,7 +738,7 @@ def searchcase(request):
                     'edit': case[index].case_id,
                     'go': case[index].case_id
                 }
-            print(caseapi_return)
+            # print(caseapi_return)
             return render(request, 'Dcc/caseapi_index.html', locals())
 
         elif len(Casename)>0:
@@ -765,7 +765,7 @@ def searchcase(request):
                     'edit': case[index].case_id,
                     'go': case[index].case_id
                 }
-            print(caseapi_return)
+            # print(caseapi_return)
             return render(request, 'Dcc/caseapi_index.html', locals())
 
 
@@ -809,7 +809,7 @@ def searchreport(request):
                 'reportname': case[index].reportclass,
                 'go': case[index].report_id
             }
-        print(caseapi_return)
+        # print(caseapi_return)
         return render(request, 'Dcc/report_list.html', locals())
 
     if len(reportclass) > 0 :
@@ -832,7 +832,7 @@ def searchreport(request):
                 'reportname': case[index].reportclass,
                 'go': case[index].report_id
             }
-        print(caseapi_return)
+        # print(caseapi_return)
         return render(request, 'Dcc/report_list.html', locals())
 
     if len(reportname) > 0 :
@@ -855,7 +855,7 @@ def searchreport(request):
                 'reportname': case[index].reportclass,
                 'go': case[index].report_id
             }
-        print(caseapi_return)
+        # print(caseapi_return)
         return render(request, 'Dcc/report_list.html', locals())
 
     if len(reportclass) > 0 and len(reportname) > 0:
@@ -878,7 +878,7 @@ def searchreport(request):
                 'reportname': case[index].reportclass,
                 'go': case[index].report_id
             }
-        print(caseapi_return)
+        # print(caseapi_return)
         return render(request, 'Dcc/report_list.html', locals())
 
 
