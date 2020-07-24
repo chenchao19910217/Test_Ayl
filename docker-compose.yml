@@ -9,6 +9,16 @@ services:
       - "80:8080"
     image:
       test_aly:latest
+  test_crontab:
+    build:
+      ./
+    command:
+      python manage.py crontab add
+    ports:
+      - "80:8080"
+    image:
+      test_crontab:latest
+
 #    environment:
 #      MYSQLLINK: mysql
 #      MYSQLUSER: root

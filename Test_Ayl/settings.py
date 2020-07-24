@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CRONTAB_COMMAND_PREFIX = 'LANG_ALL=zh_cn.UTF-8'
 
 # Application definition
 
@@ -38,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login',
-    'Dcc'
+    'Dcc',
+    'django_crontab'
 ]
 
 MIDDLEWARE = [
@@ -167,3 +169,5 @@ EMAIL_HOST_USER = '122903166@qq.com'
 EMAIL_HOST_PASSWORD = 'ahovrotvonzibiei'
 # 发件人
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+CRONJOBS=[('*/1 * * * *', 'Dcc.cron.test','>>test.log')]
