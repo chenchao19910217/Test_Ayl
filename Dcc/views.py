@@ -385,15 +385,20 @@ def testlist_index(request):
                         # print('最后', Response)
 
                     if len(Casekey) != 0 and len(Caseexpected) != 0:
-                        Caseexpected = eval(Caseexpected)
-                        # Caseexpected = json.loads(Caseexpected)
-                        Casekeys = Casekey.replace('(', '').replace(')', '')
-                        keys = tuple([str(i) for i in Casekeys.split(',')])
-                        resultkey = inerface_contrast.inerface_contrast(keys, response.json(), Caseexpected)
-                        resultcase['resultkey'] = resultkey
-                        resultcase['Response'] = Response
+                        try:
+                            Caseexpected = eval(Caseexpected)
+                            # Caseexpected = json.loads(Caseexpected)
+                            Casekeys = Casekey.replace('(', '').replace(')', '')
+                            keys = tuple([str(i) for i in Casekeys.split(',')])
+                            resultkey = inerface_contrast.inerface_contrast(keys, response.json(), Caseexpected)
+                            resultcase['resultkey'] = resultkey
+                            resultcase['Response'] = Response
 
-                        result.append(resultcase)
+                            result.append(resultcase)
+                        except:
+                            resultcase['resultkey'] = "格式错误"
+                            resultcase['Response'] ="格式错误"
+                            result.append(resultcase)
 
                 elif Caserequest == 'GET':
                     resultcase = {'resultkey': '', 'Response': '', 'url': '','Caseexpected':'','Casereplace':'','Casedeliver':''}
@@ -457,14 +462,19 @@ def testlist_index(request):
 
 
                     if len(Casekey) != 0 and len(Caseexpected) != 0:
-                        Caseexpected = eval(Caseexpected)
-                        Casekeys = Casekey.replace('(', '').replace(')', '')
-                        keys = tuple([str(i) for i in Casekeys.split(',')])
-                        resultkey = inerface_contrast.inerface_contrast(keys, response.json(), Caseexpected)
-                        resultcase['resultkey'] = resultkey
-                        resultcase['Response'] = Response
+                        try:
+                            Caseexpected = eval(Caseexpected)
+                            Casekeys = Casekey.replace('(', '').replace(')', '')
+                            keys = tuple([str(i) for i in Casekeys.split(',')])
+                            resultkey = inerface_contrast.inerface_contrast(keys, response.json(), Caseexpected)
+                            resultcase['resultkey'] = resultkey
+                            resultcase['Response'] = Response
 
-                        result.append(resultcase)
+                            result.append(resultcase)
+                        except:
+                            resultcase['resultkey'] = "格式错误"
+                            resultcase['Response'] = "格式错误"
+                            result.append(resultcase)
 
     reportlist = models.reportlist()
 
