@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.shortcuts import redirect
 import requests,json,re,time,ast
@@ -88,7 +89,7 @@ def case_test(request):
         result = []
         for case in caselist:
             aaa=aaa+1
-            print('444444444444444444',aaa)
+
             resultcase = {'resultkey': '', 'Response': ''}
             Caserequest = caselist[case]['Caserequest']
 
@@ -121,13 +122,13 @@ def case_test(request):
                 if len(Casereplace) > 0 and len(Casedeliver) > 0:
                     Casereplace = eval(Casereplace)
                     Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,Casebody, Casedeliverlist_s)
-                    print(type(Caseheaders))
-                    response = requests.post(Caseurl, data=Casebody, headers=Caseheaders, verify=False)
+
+                    response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=Caseheaders, verify=False)
                     Response = response.json()
-                    print('len(Casereplace) > 0 and len(Casedeliver) > 0',Response)
+
 
                 elif len(Casedeliver) > 0:
-                    response = requests.post(Caseurl, data=Casebody, headers=json.loads(Caseheaders), verify=False)
+                    response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=json.loads(Caseheaders), verify=False)
                     Response = response.json()
                     Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
                     keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
@@ -135,35 +136,44 @@ def case_test(request):
                     for key in keys:
                         exec("Casedeliverlist = Response%s" % key)
                         Casedeliverlist_s[key] = loc['Casedeliverlist']
-                    print(Casedeliverlist_s)
-                    print('len(Casedeliver) > 0',Response)
+
 
                 elif len(Casereplace) > 0:
                     Casereplace = eval(Casereplace)
                     Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,
                                                                                Casebody, Casedeliverlist_s)
-                    print(type(Caseheaders))
+
                     time.sleep(5)
-                    response = requests.post(Caseurl, data=Casebody, headers=Caseheaders, verify=False)
+
+                    response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=Caseheaders, verify=False)
                     Response = response.json()
 
-                    print('len(Casereplace) > 0 and len(Casedeliver) > 0', Response)
 
                 else:
-                    response = requests.post(Caseurl, data=Casebody, headers=json.loads(Caseheaders), verify=False)
+                    response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=json.loads(Caseheaders), verify=False)
                     Response = response.json()
-                    print('最后',Response)
+
 
 
                 if len(Casekey) != 0 and len(Caseexpected) != 0:
-                    Caseexpected = eval(Caseexpected)
-                    # Caseexpected = json.loads(Caseexpected)
-                    Casekeys = Casekey.replace('(', '').replace(')', '')
-                    keys = tuple([str(i) for i in Casekeys.split(',')])
-                    resultkey=inerface_contrast.inerface_contrast(keys, response.json(), Caseexpected)
-                    resultcase['resultkey'] = resultkey
-                    resultcase['Response'] = Response
-                    result.append(resultcase)
+                    try:
+                        Caseexpected= Caseexpected.replace(" ", "")
+
+                        Caseexpected = eval(Caseexpected)
+                        # Caseexpected = json.loads(Caseexpected)
+                        Casekeys = Casekey.replace('(', '').replace(')', '')
+                        keys = tuple([str(i) for i in Casekeys.split(',')])
+                        resultkey=inerface_contrast.inerface_contrast(keys, response.json(), Caseexpected)
+                        resultcase['resultkey'] = resultkey
+                        resultcase['Response'] = Response
+                        result.append(resultcase)
+                    except:
+                        Response = {
+                            "code": '400',
+                            "msg": '预期值格式错误'
+
+                        }
+                        return HttpResponse(json.dumps(Response))
 
 
             elif Caserequest == 'GET':
@@ -197,13 +207,11 @@ def case_test(request):
 
                 if len(Casereplace) > 0 and len(Casedeliver)>0:
                     Casereplace = eval(Casereplace)
-                    print('111111111111111111',Casedeliverlist_s)
                     Caseheaders,Caseurl,Casebody=inerface_contrast.replace(Casereplace, Caseheaders, Caseurl, Casebody,Casedeliverlist_s)
                     response = requests.get(Caseurl, headers=json.loads(Caseheaders), verify=False)
                     Response = response.json()
 
                 elif len(Casedeliver)>0:
-                    print(type(Caseheaders))
                     response = requests.get(Caseurl, headers=json.loads(Caseheaders), verify=False)
                     Response = response.json()
                     Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
@@ -212,8 +220,6 @@ def case_test(request):
                     for key in keys:
                         exec("Casedeliverlist = Response%s" % key)
                         Casedeliverlist_s[key] = loc['Casedeliverlist']
-                    print(Casedeliverlist_s)
-                    print('存储++++++++++++++++++++++', Response)
 
                 elif len(Casereplace) > 0:
                     Casereplace = eval(Casereplace)
@@ -224,22 +230,29 @@ def case_test(request):
                     Response = response.json()
 
                 else:
-                    print('什么都没有',Caseurl,type(Caseheaders),Caseheaders)
                     response = requests.get(Caseurl, headers=json.loads(Caseheaders), verify=False)
                     # print("wwwwwwwwwwwwwwwwwwwww",response.json())
                     Response = response.json()
                     # return HttpResponse(json.dumps(result))
-                    print('什么都没有',Response)
 
 
                 if len(Casekey) != 0 and len(Caseexpected) != 0:
-                    Caseexpected = eval(Caseexpected)
-                    Casekeys = Casekey.replace('(', '').replace(')', '')
-                    keys = tuple([str(i) for i in Casekeys.split(',')])
-                    resultkey=inerface_contrast.inerface_contrast(keys, response.json(), Caseexpected)
-                    resultcase['resultkey'] = resultkey
-                    resultcase['Response'] = Response
-                    result.append(resultcase)
+                    try:
+                        Caseexpected = eval(Caseexpected)
+                        Casekeys = Casekey.replace('(', '').replace(')', '')
+                        keys = tuple([str(i) for i in Casekeys.split(',')])
+                        resultkey=inerface_contrast.inerface_contrast(keys, response.json(), Caseexpected)
+                        resultcase['resultkey'] = resultkey
+                        resultcase['Response'] = Response
+                        result.append(resultcase)
+                    except:
+                        Response = {
+                            "code": '400',
+                            "msg": '预期值格式错误'
+
+                        }
+                        return HttpResponse(json.dumps(Response))
+
 
     return HttpResponse(json.dumps(result))
 
@@ -339,12 +352,12 @@ def testlist_index(request):
                         Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,
                                                                                    Casebody, Casedeliverlist_s)
                         # print(type(Caseheaders))
-                        response = requests.post(Caseurl, data=Casebody, headers=Caseheaders, verify=False)
+                        response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=Caseheaders, verify=False)
                         Response = response.json()
                         # print('len(Casereplace) > 0 and len(Casedeliver) > 0', Response)
 
                     elif len(Casedeliver) > 0:
-                        response = requests.post(Caseurl, data=Casebody, headers=json.loads(Caseheaders), verify=False)
+                        response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=json.loads(Caseheaders), verify=False)
                         Response = response.json()
                         Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
                         keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
@@ -361,13 +374,13 @@ def testlist_index(request):
                                                                                    Casebody, Casedeliverlist_s)
                         # print(type(Caseheaders))
                         time.sleep(5)
-                        response = requests.post(Caseurl, data=Casebody, headers=Caseheaders, verify=False)
+                        response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=Caseheaders, verify=False)
                         Response = response.json()
 
                         # print('len(Casereplace) > 0 and len(Casedeliver) > 0', Response)
 
                     else:
-                        response = requests.post(Caseurl, data=Casebody, headers=json.loads(Caseheaders), verify=False)
+                        response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=json.loads(Caseheaders), verify=False)
                         Response = response.json()
                         # print('最后', Response)
 

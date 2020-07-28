@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82a7e75e-d734-470c-895c-be224c7f3a09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/encrypt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/encrypt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/encrypt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dcc/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dcc/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/templates/login/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/login/templates/login/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/tests.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +22,10 @@
     <SUITE FILE_PATH="coverage/Test_Ayl$dcc_login.coverage" NAME="dcc_login Coverage Results" MODIFIED="1594362825428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dcc/testapi/dcc_login" />
     <SUITE FILE_PATH="coverage/Test_Ayl$tests__1_.coverage" NAME="tests (1) Coverage Results" MODIFIED="1595338359248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dcc" />
     <SUITE FILE_PATH="coverage/Test_Ayl$views.coverage" NAME="views Coverage Results" MODIFIED="1594363386774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dcc" />
-    <SUITE FILE_PATH="coverage/Test_Ayl$tests.coverage" NAME="tests Coverage Results" MODIFIED="1594633106807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/login" />
+    <SUITE FILE_PATH="coverage/Test_Ayl$test.coverage" NAME="test Coverage Results" MODIFIED="1595909073303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
+    <SUITE FILE_PATH="coverage/Test_Ayl$tests.coverage" NAME="tests Coverage Results" MODIFIED="1595842389495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/login" />
     <SUITE FILE_PATH="coverage/Test_Ayl$send_mail.coverage" NAME="send_mail Coverage Results" MODIFIED="1595586275347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
+    <SUITE FILE_PATH="coverage/Test_Ayl$encrypt.coverage" NAME="encrypt Coverage Results" MODIFIED="1595843027418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
     <SUITE FILE_PATH="coverage/Test_Ayl$cron.coverage" NAME="cron Coverage Results" MODIFIED="1595586367259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dcc" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
@@ -24,37 +34,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test_Ayl/settings.py">
+        <entry file="file://$PROJECT_DIR$/login/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2460">
-              <caret line="164" column="16" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="16" />
+            <state relative-caret-position="351">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="e#1412#1425#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+        <entry file="file://$PROJECT_DIR$/core/encrypt.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="90">
+              <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dcc/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12375">
-              <caret line="878" column="43" selection-start-line="878" selection-start-column="43" selection-end-line="878" selection-end-column="43" />
+            <state relative-caret-position="1262">
+              <caret line="382" column="87" selection-start-line="382" selection-start-column="87" selection-end-line="382" selection-end-column="87" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <element signature="e#438#489#0" />
@@ -63,51 +67,59 @@
                 <element signature="e#1392#1499#0" />
                 <element signature="e#1533#2369#0" />
                 <element signature="e#2398#2458#0" />
+                <element signature="e#10834#12554#0" />
+                <element signature="e#22033#23097#0" />
+                <element signature="e#23162#24720#0" />
+                <element signature="e#24785#25652#0" />
+                <element signature="e#25724#27075#0" />
+                <element signature="e#27140#32802#0" />
+                <element signature="e#32869#36750#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/core.py">
+        <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/requests/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="128" column="48" selection-start-line="128" selection-start-column="48" selection-end-line="128" selection-end-column="48" />
-              <folding>
-                <element signature="e#437#4518#0" />
-                <element signature="e#536#592#0" />
-                <element signature="e#632#1857#0" />
-              </folding>
+            <state relative-caret-position="220">
+              <caret line="118" selection-start-line="118" selection-end-line="118" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dcc/cron.py">
+        <entry file="file://$PROJECT_DIR$/core/encrypt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            <state relative-caret-position="225">
+              <caret line="15" column="10" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage.py">
+        <entry file="file://$PROJECT_DIR$/core/encrypt.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
-              <folding>
-                <element signature="e#84#93#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="150">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login/tests.py">
+        <entry file="file://$PROJECT_DIR$/login/templates/login/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="28" selection-start-line="1" selection-end-line="1" selection-end-column="28" />
+            <state relative-caret-position="504">
+              <caret line="160" column="62" lean-forward="true" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/caseapi_index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="112" column="16" selection-start-line="112" selection-start-column="12" selection-end-line="112" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -115,8 +127,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dcc/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+            <state relative-caret-position="675">
+              <caret line="45" column="57" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="57" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -125,10 +137,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/test.html">
+        <entry file="file://$PROJECT_DIR$/core/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3180">
-              <caret line="212" column="13" selection-start-line="212" selection-start-column="13" selection-end-line="212" selection-end-column="13" />
+            <state relative-caret-position="549">
+              <caret line="69" column="38" lean-forward="true" selection-start-line="47" selection-end-line="47" selection-end-column="23" />
+              <folding>
+                <element signature="e#1542#1574#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,6 +153,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="Python Script" />
       </list>
@@ -202,7 +218,6 @@
         <option value="$PROJECT_DIR$/webtest/templates/webtest/yshow.html" />
         <option value="$PROJECT_DIR$/webtest/views.py" />
         <option value="$PROJECT_DIR$/Test_Ayl/urls.py" />
-        <option value="$PROJECT_DIR$/login/tests.py" />
         <option value="$PROJECT_DIR$/login/templates/login/login.html" />
         <option value="$PROJECT_DIR$/Dcc/testapi/dcc_login.py" />
         <option value="$PROJECT_DIR$/Dcc/tests.py" />
@@ -213,9 +228,7 @@
         <option value="$PROJECT_DIR$/Dcc/templates/Dcc/report_index.html" />
         <option value="$PROJECT_DIR$/Dcc/templates/Dcc/yshow.html" />
         <option value="$PROJECT_DIR$/Dcc/templates/Dcc/yshowresult.html" />
-        <option value="$PROJECT_DIR$/login/templates/login/index.html" />
         <option value="$PROJECT_DIR$/login/views.py" />
-        <option value="$PROJECT_DIR$/Dcc/views.py" />
         <option value="$PROJECT_DIR$/Dcc/templates/Dcc/caseadd.html" />
         <option value="$PROJECT_DIR$/Dcc/templates/Dcc/caseapi_index.html" />
         <option value="$PROJECT_DIR$/Dcc/templates/Dcc/caseedit.html" />
@@ -225,14 +238,21 @@
         <option value="$PROJECT_DIR$/Dcc/cron.py" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/login/tests.py" />
+        <option value="$PROJECT_DIR$/core/encrypt.js.html" />
+        <option value="$PROJECT_DIR$/core/encrypt.js" />
+        <option value="$PROJECT_DIR$/core/encrypt.py" />
+        <option value="$PROJECT_DIR$/core/encrypt.html" />
+        <option value="$PROJECT_DIR$/login/templates/login/index.html" />
+        <option value="$PROJECT_DIR$/core/test.py" />
+        <option value="$PROJECT_DIR$/Dcc/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1703" />
-    <option name="y" value="134" />
-    <option name="width" value="1440" />
-    <option name="height" value="839" />
+    <option name="x" value="1440" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -240,7 +260,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,34 +270,18 @@
             <path>
               <item name="Test_Ayl" type="b2602c69:ProjectViewProjectNode" />
               <item name="Test_Ayl" type="462c0819:PsiDirectoryNode" />
-              <item name="Dcc" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Test_Ayl" type="b2602c69:ProjectViewProjectNode" />
               <item name="Test_Ayl" type="462c0819:PsiDirectoryNode" />
               <item name="Dcc" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test_Ayl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test_Ayl" type="462c0819:PsiDirectoryNode" />
-              <item name="Dcc" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test_Ayl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test_Ayl" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test_Ayl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test_Ayl" type="462c0819:PsiDirectoryNode" />
-              <item name="Test_Ayl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,7 +290,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -311,7 +314,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django server.Test_Ayl">
+  <component name="RunManager" selected="Python.test">
     <configuration name="cron" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Test_Ayl" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -334,7 +337,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="dcc_login" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="encrypt" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Test_Ayl" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -342,12 +345,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dcc/testapi/dcc_login" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/core" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dcc/testapi/dcc_login.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/core/encrypt.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -378,7 +381,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tests (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Test_Ayl" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -386,12 +389,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dcc" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/core" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dcc/tests.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/core/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -448,11 +451,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.encrypt" />
+        <item itemvalue="Python.tests" />
         <item itemvalue="Python.cron" />
         <item itemvalue="Python.send_mail" />
-        <item itemvalue="Python.tests (1)" />
-        <item itemvalue="Python.dcc_login" />
-        <item itemvalue="Python.tests" />
       </list>
     </recent_temporary>
   </component>
@@ -483,12 +486,15 @@
       <workItem from="1595213488129" duration="18987000" />
       <workItem from="1595298599131" duration="77628000" />
       <workItem from="1595561537394" duration="8089000" />
-      <workItem from="1595594860766" duration="1414000" />
+      <workItem from="1595594860766" duration="1538000" />
+      <workItem from="1595818427420" duration="590000" />
+      <workItem from="1595822228839" duration="2715000" />
+      <workItem from="1595829000341" duration="7608000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276522000" />
+    <option name="totallyTimeSpent" value="287559000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -503,20 +509,20 @@
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12673056" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09797657" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32970297" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.63897765" weight="0.32079208" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49840257" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.63684773" visible="true" weight="0.32079208" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4978701" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49928468" weight="0.32891566" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49946752" weight="0.32970297" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.31735888" side_tool="true" visible="true" weight="0.17524752" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.6826411" visible="true" weight="0.17524752" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3631523" side_tool="true" visible="true" weight="0.32079208" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.6794462" weight="0.34257427" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49840257" weight="0.32970297" />
       <window_info anchor="bottom" id="Structure" order="13" weight="0.24950495" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -546,21 +552,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Dcc/testapi/logs/dcc_Login.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dcc/testapi/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dcc_yshow/yshow.html" />
-    <entry file="file://$PROJECT_DIR$/login/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtest/urls.py" />
     <entry file="file://$PROJECT_DIR$/webtest/templates/webtest/yshow.html" />
     <entry file="file://$PROJECT_DIR$/login/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -652,13 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/requests/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/requests/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -733,13 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login/templates/login/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1583">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login/templates/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-325">
@@ -751,13 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1423">
           <caret line="261" column="41" lean-forward="true" selection-start-line="261" selection-start-column="41" selection-end-line="261" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/caseapi_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="167" column="40" lean-forward="true" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -804,19 +774,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dcc/views.py">
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12375">
-          <caret line="878" column="43" selection-start-line="878" selection-start-column="43" selection-end-line="878" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#438#489#0" />
-            <element signature="e#515#710#0" />
-            <element signature="e#745#1362#0" />
-            <element signature="e#1392#1499#0" />
-            <element signature="e#1533#2369#0" />
-            <element signature="e#2398#2458#0" />
-          </folding>
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -832,20 +800,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dcc/tests.py">
+    <entry file="file://$PROJECT_DIR$/Dcc/cron.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3180">
-          <caret line="212" column="13" selection-start-line="212" selection-start-column="13" selection-end-line="212" selection-end-column="13" />
+        <state relative-caret-position="195">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -859,31 +817,112 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3180">
+          <caret line="212" column="13" selection-start-line="212" selection-start-column="13" selection-end-line="212" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/encrypt.js.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/login/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="28" selection-start-line="1" selection-end-line="1" selection-end-column="28" />
+        <state relative-caret-position="351">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#1412#1425#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dcc/cron.py">
+    <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/caseapi_index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        <state relative-caret-position="268">
+          <caret line="112" column="16" selection-start-line="112" selection-start-column="12" selection-end-line="112" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+    <entry file="file://$PROJECT_DIR$/core/encrypt.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
+    <entry file="file://$PROJECT_DIR$/core/encrypt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/encrypt.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/templates/login/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="160" column="62" lean-forward="true" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/requests/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="69" column="38" lean-forward="true" selection-start-line="47" selection-end-line="47" selection-end-column="23" />
+          <folding>
+            <element signature="e#1542#1574#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dcc/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="57" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dcc/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1262">
+          <caret line="382" column="87" selection-start-line="382" selection-start-column="87" selection-end-line="382" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#438#489#0" />
+            <element signature="e#515#710#0" />
+            <element signature="e#745#1362#0" />
+            <element signature="e#1392#1499#0" />
+            <element signature="e#1533#2369#0" />
+            <element signature="e#2398#2458#0" />
+            <element signature="e#10834#12554#0" />
+            <element signature="e#22033#23097#0" />
+            <element signature="e#23162#24720#0" />
+            <element signature="e#24785#25652#0" />
+            <element signature="e#25724#27075#0" />
+            <element signature="e#27140#32802#0" />
+            <element signature="e#32869#36750#0" />
+          </folding>
         </state>
       </provider>
     </entry>
