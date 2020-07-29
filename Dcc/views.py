@@ -1150,8 +1150,8 @@ def case_teston(request):
 
     return HttpResponse(json.dumps(result))
 
-@csrf_exempt
-@ensure_csrf_cookie
+# @csrf_exempt
+# @ensure_csrf_cookie
 def caseapi_indexon(request):
     caseapi_return = {
         "code": '',
@@ -1167,7 +1167,7 @@ def caseapi_indexon(request):
     }
     apilist = models.apiliston()
     caselists = models.apiliston.objects.all()
-    print('1111111111111',caselists)
+    # print('1111111111111',caselists)
     try:
         for index in range(len(caselists)):
             caseapi_return['equipment'][index] = {
