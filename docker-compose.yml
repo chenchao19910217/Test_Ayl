@@ -9,14 +9,17 @@ services:
       - "80:8080"
     image:
       test_aly:latest
+    volumes:
+      - /volumes/sqlite:/code/db
 
-  test_crontab:
-    build:
-      ./
-    command:
-      python manage.py crontab add
-    image:
-      test_aly:latest
+
+#  test_crontab:
+#    build:
+#      ./
+#    command:
+#      python manage.py crontab add
+#    image:
+#      test_aly:latest
 
 
 #    environment:
