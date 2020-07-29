@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82a7e75e-d734-470c-895c-be224c7f3a09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dcc/templates/Dcc/caseapi_indexon.html" beforeDir="false" afterPath="$PROJECT_DIR$/Dcc/templates/Dcc/caseapi_indexon.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dcc/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dcc/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dcc/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="1170" lean-forward="true" selection-start-line="1170" selection-end-line="1170" />
+            <state relative-caret-position="391">
+              <caret line="191" column="76" selection-start-line="191" selection-start-column="76" selection-end-line="191" selection-end-column="76" />
               <folding>
                 <element signature="e#462#513#0" />
                 <element signature="e#539#734#0" />
@@ -59,7 +57,6 @@
                 <element signature="e#1416#1523#0" />
                 <element signature="e#1557#2393#0" />
                 <element signature="e#2422#2482#0" />
-                <element signature="e#2545#11410#0" />
                 <element signature="e#11178#12898#0" />
                 <element signature="e#12966#22908#0" />
                 <element signature="e#22972#24036#0" />
@@ -69,7 +66,8 @@
                 <element signature="e#28079#33741#0" />
                 <element signature="e#33808#37689#0" />
                 <element signature="e#37757#38824#0" />
-                <element signature="e#38890#48118#0" />
+                <element signature="e#39439#48622#0" />
+                <element signature="e#48685#49602#0" />
                 <element signature="e#48673#48735#0" />
                 <element signature="e#48800#50524#0" />
                 <element signature="e#50590#56274#0" />
@@ -91,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/caseaddon.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="192" column="34" selection-start-line="192" selection-start-column="19" selection-end-line="192" selection-end-column="34" />
+            <state relative-caret-position="416">
+              <caret line="219" column="39" selection-start-line="219" selection-start-column="29" selection-end-line="219" selection-end-column="39" />
               <folding>
                 <element signature="e#7478#9901#0#HTML" />
                 <element signature="e#11965#13736#0#HTML" />
@@ -104,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dcc/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="44" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="44" />
+            <state relative-caret-position="315">
+              <caret line="21" column="40" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -166,11 +164,11 @@
       <find>case_addon</find>
       <find>caseaddon</find>
       <find>case_on_edit</find>
-      <find>casetest</find>
       <find>case_teston</find>
-      <find>caseteston</find>
       <find>caseapion</find>
       <find>caseapi_indexon</find>
+      <find>casetest</find>
+      <find>caseteston</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -455,12 +453,12 @@
       <workItem from="1595818427420" duration="590000" />
       <workItem from="1595822228839" duration="2715000" />
       <workItem from="1595829000341" duration="29863000" />
-      <workItem from="1596013105424" duration="11714000" />
+      <workItem from="1596013105424" duration="12158000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="321528000" />
+    <option name="totallyTimeSpent" value="321972000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -848,17 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/caseaddon.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="192" column="34" selection-start-line="192" selection-start-column="19" selection-end-line="192" selection-end-column="34" />
-          <folding>
-            <element signature="e#7478#9901#0#HTML" />
-            <element signature="e#11965#13736#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login/templates/login/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
@@ -880,17 +867,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/caseaddon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="219" column="39" selection-start-line="219" selection-start-column="29" selection-end-line="219" selection-end-column="39" />
+          <folding>
+            <element signature="e#7478#9901#0#HTML" />
+            <element signature="e#11965#13736#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Dcc/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="44" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="44" />
+        <state relative-caret-position="315">
+          <caret line="21" column="40" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Dcc/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="1170" lean-forward="true" selection-start-line="1170" selection-end-line="1170" />
+        <state relative-caret-position="391">
+          <caret line="191" column="76" selection-start-line="191" selection-start-column="76" selection-end-line="191" selection-end-column="76" />
           <folding>
             <element signature="e#462#513#0" />
             <element signature="e#539#734#0" />
@@ -898,7 +896,6 @@
             <element signature="e#1416#1523#0" />
             <element signature="e#1557#2393#0" />
             <element signature="e#2422#2482#0" />
-            <element signature="e#2545#11410#0" />
             <element signature="e#11178#12898#0" />
             <element signature="e#12966#22908#0" />
             <element signature="e#22972#24036#0" />
@@ -908,7 +905,8 @@
             <element signature="e#28079#33741#0" />
             <element signature="e#33808#37689#0" />
             <element signature="e#37757#38824#0" />
-            <element signature="e#38890#48118#0" />
+            <element signature="e#39439#48622#0" />
+            <element signature="e#48685#49602#0" />
             <element signature="e#48673#48735#0" />
             <element signature="e#48800#50524#0" />
             <element signature="e#50590#56274#0" />

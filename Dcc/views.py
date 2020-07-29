@@ -94,21 +94,21 @@ def case_test(request):
             Caserequest = caselist[case]['Caserequest']
 
             if Caserequest == 'POST':
-                try:
-                    Caseurl = caselist[case]['Caseurl']
-                    Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
-                    Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
-                    Casekey = caselist[case]['Casekey'].replace("'", '"').replace(" ", "")
-                    Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
-                    Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
-                    Casereplace = caselist[case]['Casereplace'].replace(" ", "")
-                except:
-                    Response = {
-                        "code": '400',
-                        "msg": '什么没填心理没数吗？'
-
-                    }
-                    return HttpResponse(json.dumps(Response))
+                # try:
+                Caseurl = caselist[case]['Caseurl']
+                Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
+                Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
+                Casekey = caselist[case]['Casekey'].replace("'", '"').replace(" ", "")
+                Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
+                Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
+                Casereplace = caselist[case]['Casereplace'].replace(" ", "")
+                # except:
+                #     Response = {
+                #         "code": '400',
+                #         "msg": '什么没填心理没数吗？'
+                #
+                #     }
+                #     return HttpResponse(json.dumps(Response))
                 # Casesign = caselist[case]['Casesign'].replace(" ", "")
                 # Casedata =caselist[case]['Casedata']
                 # Casehe =caselist[case]['Casehe'].replace(" ", "")
@@ -182,21 +182,21 @@ def case_test(request):
 
 
             elif Caserequest == 'GET':
-                try:
-                    Caseurl = caselist[case]['Caseurl']
-                    Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
-                    Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
-                    Casekey = caselist[case]['Casekey'].replace("'", '"').replace(" ", "")
-                    Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
-                    Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
-                    Casereplace = caselist[case]['Casereplace'].replace(" ", "")
-                except:
-                    Response = {
-                        "code": '400',
-                        "msg": '什么没填心理没数吗？'
-
-                    }
-                    return HttpResponse(json.dumps(Response))
+                # try:
+                Caseurl = caselist[case]['Caseurl']
+                Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
+                Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
+                Casekey = caselist[case]['Casekey'].replace("'", '"').replace(" ", "")
+                Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
+                Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
+                Casereplace = caselist[case]['Casereplace'].replace(" ", "")
+                # except:
+                #     Response = {
+                #         "code": '400',
+                #         "msg": '什么没填心理没数吗？'
+                #
+                #     }
+                #     return HttpResponse(json.dumps(Response))
 
                 if len(Caseurl)<1 or len(Caseheaders)<1:
 
@@ -974,26 +974,25 @@ def case_teston(request):
             Caserequest = caselist[case]['Caserequest']
 
             if Caserequest == 'POST':
-                try:
-                    Caseurl = caselist[case]['Caseurl']
-                    Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
-                    Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
-                    Casekey = caselist[case]['Casekey'].replace("'", '"').replace(" ", "")
-                    Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
-                    Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
-                    Casereplace = caselist[case]['Casereplace'].replace(" ", "")
-                    Casesign = caselist[case]['Casesign'].replace(" ", "")
-                    Casedata =caselist[case]['Casedata']
-                    Casehe =caselist[case]['Casehe'].replace(" ", "")
-                    # print('11123',Casehe,Casedata,Casesign)
-                    Caseurl = Caseurl+'?ts='+str(Casedata)+'&'+'he='+Casehe+'&'+'sign='+Casesign
-                except:
-                    Response = {
-                        "code": '400',
-                        "msg": '什么没填心理没数吗？'
-
-                    }
-                    return HttpResponse(json.dumps(Response))
+                Caseurl = caselist[case]['Caseurl']
+                Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
+                Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
+                Casekey = caselist[case]['Casekey'].replace("'", '"').replace(" ", "")
+                Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
+                Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
+                Casereplace = caselist[case]['Casereplace'].replace(" ", "")
+                Casesign = caselist[case]['Casesign'].replace(" ", "")
+                Casedata = caselist[case]['Casedata']
+                Casehe = caselist[case]['Casehe'].replace(" ", "")
+                # print('11123',Casehe,Casedata,Casesign)
+                Caseurl = Caseurl + '?ts=' + str(Casedata) + '&' + 'he=' + Casehe + '&' + 'sign=' + Casesign
+                # except:
+                #     Response = {
+                #         "code": '400',
+                #         "msg": '什么没填心理没数吗？'
+                #
+                #     }
+                #     return HttpResponse(json.dumps(Response))
 
                 if len(Caseurl)<1 or len(Caseheaders)<1 or len(Casebody)<1 :
 
@@ -1063,21 +1062,21 @@ def case_teston(request):
 
 
             elif Caserequest == 'GET':
-                try:
-                    Caseurl = caselist[case]['Caseurl']
-                    Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
-                    Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
-                    Casekey = caselist[case]['Casekey'].replace("'", '"').replace(" ", "")
-                    Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
-                    Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
-                    Casereplace = caselist[case]['Casereplace'].replace(" ", "")
-                except:
-                    Response = {
-                        "code": '400',
-                        "msg": '什么没填心理没数吗？'
-
-                    }
-                    return HttpResponse(json.dumps(Response))
+                # try:
+                Caseurl = caselist[case]['Caseurl']
+                Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
+                Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
+                Casekey = caselist[case]['Casekey'].replace("'", '"').replace(" ", "")
+                Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
+                Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
+                Casereplace = caselist[case]['Casereplace'].replace(" ", "")
+                # except:
+                #     Response = {
+                #         "code": '400',
+                #         "msg": '什么没填心理没数吗？'
+                #
+                #     }
+                #     return HttpResponse(json.dumps(Response))
                 if len(Caseurl)<1 or len(Caseheaders)<1:
 
                     Response={
