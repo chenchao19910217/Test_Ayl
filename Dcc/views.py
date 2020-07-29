@@ -1168,8 +1168,8 @@ def caseapi_indexon(request):
     apilist = models.apiliston()
     caselists = models.apiliston.objects.all()
     # print('1111111111111',caselists)
-    try:
-        for index in range(len(caselists)):
+
+    for index in range(len(caselists)):
             caseapi_return['equipment'][index] = {
                 'item': caselists[index].item,
                 'release':caselists[index].release,
@@ -1178,9 +1178,8 @@ def caseapi_indexon(request):
                 'edit':caselists[index].case_id,
                 'go':caselists[index].case_id
             }
-            return render(request, 'Dcc/caseapi_indexon.html', locals())
-    except:
-        return render(request, 'Dcc/caseapi_indexon.html',locals())
+    return render(request, 'Dcc/caseapi_indexon.html', locals())
+
 
 @csrf_exempt
 @ensure_csrf_cookie
