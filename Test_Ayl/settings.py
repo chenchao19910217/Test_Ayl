@@ -92,33 +92,33 @@ LOGGING = {
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR+'/db/', 'db.sqlite3'),
-    }
-}
-# print('11111',BASE_DIR)
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',   # 数据库引擎
-#         'NAME': 'test_ayl',  # 数据库名，先前创建的
-#         'USER': os.getenv("MYSQLUSER","chenchao"),     # 用户名，可以自己创建用户
-#         'PASSWORD': os.getenv("MYSQLPASSWD","chenchao"),  # 密码
-#         # 'HOST': "127.0.0.1",  # mysql服务所在的主机ip
-#         'HOST': os.getenv("MYSQLLINK","127.0.0.1"),  # mysql服务所在的主机ip
-#         # 'HOST': os.getenv("MYSQLLINK","192.168.43.142"),  # mysql服务所在的主机ip
-#
-#         'PORT': '3306',         # mysql服务端口
-#         'OPTIONS': {
-#                     "init_command": "SET foreign_key_checks = 0;",
-#                 },
-#         'TEST': {
-#                     'CHARSET' : 'utf8',
-#                     'COLLATION':'utf8_general_ci'
-#                 }
-#             }
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR+'/db/', 'db.sqlite3'),
+#     }
 # }
+# print('11111',BASE_DIR)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',   # 数据库引擎
+        'NAME': 'test_ayl',  # 数据库名，先前创建的
+        'USER': os.getenv("MYSQLUSER","root"),     # 用户名，可以自己创建用户
+        'PASSWORD': os.getenv("MYSQLPASSWD","abc1234"),  # 密码
+        # 'HOST': "127.0.0.1",  # mysql服务所在的主机ip
+        'HOST': os.getenv("MYSQLLINK","mysql"),  # mysql服务所在的主机ip
+        # 'HOST': os.getenv("MYSQLLINK","192.168.43.142"),  # mysql服务所在的主机ip
+
+        'PORT': '3306',         # mysql服务端口
+        'OPTIONS': {
+                    "init_command": "SET foreign_key_checks = 0;",
+                },
+        'TEST': {
+                    'CHARSET' : 'utf8',
+                    'COLLATION':'utf8_general_ci'
+                }
+            }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
