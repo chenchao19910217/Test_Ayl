@@ -1,0 +1,174 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>首页</title>#}
+{#</head>#}
+{#<body>#}
+{#<h1>{{ request.session.user_name }}!  欢迎回来！</h1>#}
+{#<p>#}
+{#    <a href="/login/logout/">登出</a>#}
+{#</p>#}
+{#</body>#}
+{#</html>#}
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 上述meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'login/css/login.css' %}" rel="stylesheet"/>
+    <title>抖查查线上测试平台</title>
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">{{ request.session.user_name }}</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="#">项目</a>
+    <a class="p-2 text-dark" href="/Dcc/caseapi/">测试列表</a>
+    <a class="p-2 text-dark" href="#">测试工具</a>
+    <a class="p-2 text-dark" href="/Dcc/case_report/">测试报告</a>
+  </nav>
+  <a class="btn btn-outline-primary" href="/login/index/">返回</a>
+</div>
+<div class="row ">
+    <div class="col-md-20  container">
+        <form class="form-inline" action="/Dcc/searchcaseon/" method="post">
+            <div class="form-group">
+                &nbsp<label for="Item">项目：</label>
+              <input name="Items" type="text" class="form-control Item" id="Item" placeholder="项目名称">
+            </div>
+            <div class="form-group">
+                &nbsp<label for="Release">迭代：</label>
+                <input name="Releases" type="text" class="form-control Release" id="Release" placeholder="迭代版本">
+              </div>
+            <div class="form-group">
+                &nbsp<label for="Modules">模块：</label>
+                <input name="Moduless" type="text" class="form-control Modules" id="Modules" placeholder="模块">
+              </div>
+              <div class="form-group">
+                &nbsp<label for="Casename">case：</label>
+                <input name="Casenames" type="text" class="form-control Casename" id="Casename" placeholder="case">
+              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary float-right">搜索</button>
+{#                  &nbsp&nbsp<button search=1  type="button" class="btn btn-info search">搜索</button>#}
+              </div>
+          </form>
+    </div>
+    <div class="col-md-1">
+                <a class="btn btn-outline-primary" href="/Dcc/caseaddon/">新建</a>
+    </div>
+</div>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+        <table data-table class="table table-hover">
+            <thead>
+             <tr bgcolor="#d1ecf1">
+              <th>项目名称</th>
+              <th>迭代版本</th>
+              <th>模块</th>
+              <th>case</th>
+              <th>编辑</th>
+             <th>选中测试</th>
+             </tr>
+            </thead>
+            <tbody>
+                {% for keys, row in caseapi_return.equipment.items %}
+                <tr class="success api-line">
+                    {% for key, value in row.items %}
+                        {% if key == 'edit' %}
+                             <td >
+                                 <a  class='editcase_id={{ value }}' href="/Dcc/case_on_edit/?case_id={{ value }}" name={{ value }} editcase_id={{ value }}>编辑</a>
+                              </td>
+                        {% elif key == 'go' %}
+                             <td >
+                              <label>
+                                  <input class='gocase_id={{ value }}' type="checkbox" name={{ value }} gocase_id={{ value }}> test
+                              </label>
+                              </td>
+                        {% else %}
+                            <td >
+                                "{{ value }}"
+                            </td>
+                        {% endif %}
+                    {% endfor %}
+
+
+                </tr> {% endfor %}
+            </tbody>
+           </table>
+            <div class="alert-info navbar-fixed-bottom">
+            <button type="button" class="btn btn-info gotest" onclick="gotest_onclick()" >Test</button>
+            <div>
+    </div>
+
+  </div>
+      </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.15.0/umd/popper.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        var user_name = '{{ request.session.user_name }}';
+        var caseapi_return = null
+        function gotest_onclick()
+        {
+
+            let caselist = {
+
+                };
+            var checkedsss = $(":checked");
+            {#console.log(checkedsss);#}
+            for (let i=0;i<checkedsss.length;i++){
+                {#console.log(checkedsss[i].name);#}
+                caselist[i]=checkedsss[i].name
+            }
+            {#console.log(caselist);#}
+            caselist_s = JSON.stringify(caselist);
+            user_names = JSON.stringify(user_name);
+             $.post("/Dcc/testlist_index/",{
+                    caselist_s,
+                    user_names
+                },
+                function(data,status){
+                   {#console.log(data)#}
+                });
+            alert('结果请在测试报告中查询');
+        }
+        function searchcase_onclick()
+        {
+            caseItem = $(".Item").val();
+            caseRelease = $(".Release").val();
+            caseModules = $(".Modules").val();
+            caseCasename = $(".Casename").val();
+
+            {#caseItem_s = JSON.stringify(caseItem);#}
+            {#caseRelease_s = JSON.stringify(caseRelease);#}
+            {#caseModules_s = JSON.stringify(caseModules);#}
+            {#caseCasename_s = JSON.stringify(caseCasename);#}
+
+            {#console.log(caseItem_s);#}
+            {#console.log(caseRelease_s);#}
+            {#console.log(caseModules_s);#}
+            {#console.log(caseCasename_s);#}
+             $.post("/Dcc/searchcase/",{
+                    caseItem,
+                     caseRelease,
+                    caseModules,
+                    caseCasename
+                },
+                function(data,status){
+                 data=JSON.parse(data)
+                 ccccc=data
+                    {#console.log(ccccc)#}
+                });
+        }
+
+    </script>
+  </body>
+</html>

@@ -8,9 +8,9 @@ with open('encrypt.js', encoding='utf-8') as f:
 docjs = execjs.compile(js)
 
 # 调用function方法
-res = docjs.call('getnow')
+res = docjs.call('window.he("uid")')
 print(res)
 
 # 调用变量方法
-res = docjs.eval('name')
-print(res)
+# res = docjs.eval('name')
+# print(res)

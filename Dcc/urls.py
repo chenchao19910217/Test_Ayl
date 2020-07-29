@@ -17,5 +17,13 @@ urlpatterns = [
     path('case_report/',views.case_report),
     path('case_report_index/',views.case_report_index),
     path('searchcase/',views.searchcase),
-    path('searchreport/',views.searchreport)
+    path('searchreport/',views.searchreport),
+    path('case_on_edit/',views.case_on_edit),
+    path('caseteston/',views.case_teston),
+    path('caseapion/', views.caseapi_indexon),
+    path('caseaddon/', views.case_addon),
+    path('casesaveon/',views.case_saveon),
+    path('searchcaseon/',views.searchcaseon),
+    path('case_updateon/',views.case_updateon),
+
 ]

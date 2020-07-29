@@ -94,13 +94,26 @@ def case_test(request):
             Caserequest = caselist[case]['Caserequest']
 
             if Caserequest == 'POST':
-                Caseurl = caselist[case]['Caseurl']
-                Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
-                Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
-                Casekey = caselist[case]['Casekey'].replace("'", '"').replace(" ", "")
-                Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
-                Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
-                Casereplace = caselist[case]['Casereplace'].replace(" ", "")
+                try:
+                    Caseurl = caselist[case]['Caseurl']
+                    Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
+                    Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
+                    Casekey = caselist[case]['Casekey'].replace("'", '"').replace(" ", "")
+                    Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
+                    Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
+                    Casereplace = caselist[case]['Casereplace'].replace(" ", "")
+                except:
+                    Response = {
+                        "code": '400',
+                        "msg": '什么没填心理没数吗？'
+
+                    }
+                    return HttpResponse(json.dumps(Response))
+                # Casesign = caselist[case]['Casesign'].replace(" ", "")
+                # Casedata =caselist[case]['Casedata']
+                # Casehe =caselist[case]['Casehe'].replace(" ", "")
+                # print('11123',Casehe,Casedata,Casesign)
+                # Caseurl = Caseurl+'?ts='+str(Casedata)+'&'+'he='+Casehe+'&'+'sign='+Casesign
                 if len(Caseurl)<1 or len(Caseheaders)<1 or len(Casebody)<1 :
 
                     Response={
@@ -117,7 +130,6 @@ def case_test(request):
 
                         }
                     return HttpResponse(json.dumps(Response))
-
 
                 if len(Casereplace) > 0 and len(Casedeliver) > 0:
                     Casereplace = eval(Casereplace)
@@ -137,23 +149,16 @@ def case_test(request):
                         exec("Casedeliverlist = Response%s" % key)
                         Casedeliverlist_s[key] = loc['Casedeliverlist']
 
-
                 elif len(Casereplace) > 0:
                     Casereplace = eval(Casereplace)
                     Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,
                                                                                Casebody, Casedeliverlist_s)
-
-                    time.sleep(5)
-
                     response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=Caseheaders, verify=False)
                     Response = response.json()
-
-
+                    print('8888888888888888',Response)
                 else:
                     response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=json.loads(Caseheaders), verify=False)
                     Response = response.json()
-
-
 
                 if len(Casekey) != 0 and len(Caseexpected) != 0:
                     try:
@@ -177,13 +182,22 @@ def case_test(request):
 
 
             elif Caserequest == 'GET':
-                Caseurl = caselist[case]['Caseurl']
-                Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
-                Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
-                Casekey = caselist[case]['Casekey'].replace("'", '"').replace(" ", "")
-                Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
-                Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
-                Casereplace = caselist[case]['Casereplace'].replace(" ", "")
+                try:
+                    Caseurl = caselist[case]['Caseurl']
+                    Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
+                    Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
+                    Casekey = caselist[case]['Casekey'].replace("'", '"').replace(" ", "")
+                    Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
+                    Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
+                    Casereplace = caselist[case]['Casereplace'].replace(" ", "")
+                except:
+                    Response = {
+                        "code": '400',
+                        "msg": '什么没填心理没数吗？'
+
+                    }
+                    return HttpResponse(json.dumps(Response))
+
                 if len(Caseurl)<1 or len(Caseheaders)<1:
 
                     Response={
@@ -905,8 +919,507 @@ def searchreport(request):
         return render(request, 'Dcc/report_list.html', locals())
 
 
+@csrf_exempt
+@ensure_csrf_cookie
+def case_on_edit(request):
+
+    if request.method == 'POST':
+        caseapi_return = []
+        caselist = request.POST.get('caselist_s')
+        print(caselist)
+        case = models.apiliston.objects.get(case_id=caselist)
+        case = eval(case.caselists.replace(' ', '').replace(r'\n', ''))
+        # print(type(case))
+        for x in case:
+            caseapi_return.append(case[x])
+        print(caseapi_return)
+        return HttpResponse(json.dumps(caseapi_return))
+    else:
+        apilist = {}
+        case_id = request.GET.get('case_id')
+        print(case_id)
+        apilist = models.apiliston()
+        case = models.apiliston.objects.get(case_id=case_id)
+        item = case.item
+        release = case.release
+        modules = case.modules
+        casename = case.casename
+        caselists = case.caselists.replace(' ', '').replace(r'\n', '')
+        caselists = eval(caselists)
+        x=len(caselists)-1
+        # print(caselists)
+        for case in caselists:
+            print(caselists[case]['Casereplace'])
+
+        return render(request, 'Dcc/casediton.html', locals())
 
 
+@csrf_exempt
+@ensure_csrf_cookie
+def case_teston(request):
+    inerface_contrast = Core()
+    Casedeliver= []
+    Casedeliverlist_s={}
+    gonumber = 1
+    aaa=1
+    if request.method == 'POST':
+        caselist = request.POST.get('caselist_s')
+        caselist = json.loads(caselist)
+        result = []
+        print("线上测试--------------------")
+        for case in caselist:
+            aaa=aaa+1
+
+            resultcase = {'resultkey': '', 'Response': ''}
+            Caserequest = caselist[case]['Caserequest']
+
+            if Caserequest == 'POST':
+                try:
+                    Caseurl = caselist[case]['Caseurl']
+                    Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
+                    Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
+                    Casekey = caselist[case]['Casekey'].replace("'", '"').replace(" ", "")
+                    Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
+                    Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
+                    Casereplace = caselist[case]['Casereplace'].replace(" ", "")
+                    Casesign = caselist[case]['Casesign'].replace(" ", "")
+                    Casedata =caselist[case]['Casedata']
+                    Casehe =caselist[case]['Casehe'].replace(" ", "")
+                    # print('11123',Casehe,Casedata,Casesign)
+                    Caseurl = Caseurl+'?ts='+str(Casedata)+'&'+'he='+Casehe+'&'+'sign='+Casesign
+                except:
+                    Response = {
+                        "code": '400',
+                        "msg": '什么没填心理没数吗？'
+
+                    }
+                    return HttpResponse(json.dumps(Response))
+
+                if len(Caseurl)<1 or len(Caseheaders)<1 or len(Casebody)<1 :
+
+                    Response={
+                        "code": '400',
+                        "msg": '搞什么呢url和headers都不填等我填呢？body也是必填！'
+
+                        }
+                    return HttpResponse(json.dumps(Response))
+                if len(Caseexpected)<1 or len(Casekey)<1 :
+
+                    Response={
+                        "code": '400',
+                        "msg": '预期值和检查key不填你让我测啥！'
+
+                        }
+                    return HttpResponse(json.dumps(Response))
+
+                if len(Casereplace) > 0 and len(Casedeliver) > 0:
+                    Casereplace = eval(Casereplace)
+                    Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,Casebody, Casedeliverlist_s)
+
+                    response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=Caseheaders, verify=False)
+                    Response = response.json()
+
+
+                elif len(Casedeliver) > 0:
+                    response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=json.loads(Caseheaders), verify=False)
+                    Response = response.json()
+                    Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
+                    keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
+                    loc = locals()
+                    for key in keys:
+                        exec("Casedeliverlist = Response%s" % key)
+                        Casedeliverlist_s[key] = loc['Casedeliverlist']
+
+                elif len(Casereplace) > 0:
+                    Casereplace = eval(Casereplace)
+                    Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,
+                                                                               Casebody, Casedeliverlist_s)
+                    response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=Caseheaders, verify=False)
+                    Response = response.json()
+                    print('8888888888888888',Response)
+                else:
+                    response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=json.loads(Caseheaders), verify=False)
+                    Response = response.json()
+
+                if len(Casekey) != 0 and len(Caseexpected) != 0:
+                    try:
+                        Caseexpected= Caseexpected.replace(" ", "")
+
+                        Caseexpected = eval(Caseexpected)
+                        # Caseexpected = json.loads(Caseexpected)
+                        Casekeys = Casekey.replace('(', '').replace(')', '')
+                        keys = tuple([str(i) for i in Casekeys.split(',')])
+                        resultkey=inerface_contrast.inerface_contrast(keys, response.json(), Caseexpected)
+                        resultcase['resultkey'] = resultkey
+                        resultcase['Response'] = Response
+                        result.append(resultcase)
+                    except:
+                        Response = {
+                            "code": '400',
+                            "msg": '预期值格式错误'
+
+                        }
+                        return HttpResponse(json.dumps(Response))
+
+
+            elif Caserequest == 'GET':
+                try:
+                    Caseurl = caselist[case]['Caseurl']
+                    Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
+                    Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
+                    Casekey = caselist[case]['Casekey'].replace("'", '"').replace(" ", "")
+                    Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
+                    Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
+                    Casereplace = caselist[case]['Casereplace'].replace(" ", "")
+                except:
+                    Response = {
+                        "code": '400',
+                        "msg": '什么没填心理没数吗？'
+
+                    }
+                    return HttpResponse(json.dumps(Response))
+                if len(Caseurl)<1 or len(Caseheaders)<1:
+
+                    Response={
+                        "code": '400',
+                        "msg": '搞什么呢url和headers都不填等我填呢？'
+
+                        }
+                    return HttpResponse(json.dumps(Response))
+                if len(Caseexpected)<1 or len(Casekey)<1 :
+
+                    Response={
+                        "code": '400',
+                        "msg": '预期值和检查key不填你让我测啥！'
+
+                        }
+                    return HttpResponse(json.dumps(Response))
+
+
+                # print('ooooooooooooooooo', Casereplace)
+                # print('eeeeeeeeeeeeeeeee', Casedeliver)
+
+                if len(Casereplace) > 0 and len(Casedeliver)>0:
+                    Casereplace = eval(Casereplace)
+                    Caseheaders,Caseurl,Casebody=inerface_contrast.replace(Casereplace, Caseheaders, Caseurl, Casebody,Casedeliverlist_s)
+                    response = requests.get(Caseurl, headers=json.loads(Caseheaders), verify=False)
+                    Response = response.json()
+
+                elif len(Casedeliver)>0:
+                    response = requests.get(Caseurl, headers=json.loads(Caseheaders), verify=False)
+                    Response = response.json()
+                    Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
+                    keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
+                    loc = locals()
+                    for key in keys:
+                        exec("Casedeliverlist = Response%s" % key)
+                        Casedeliverlist_s[key] = loc['Casedeliverlist']
+
+                elif len(Casereplace) > 0:
+                    Casereplace = eval(Casereplace)
+                    Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,
+                                                                               Casebody, Casedeliverlist_s)
+                    time.sleep(5)
+                    response = requests.get(Caseurl, headers=Caseheaders, verify=False)
+                    Response = response.json()
+
+                else:
+                    response = requests.get(Caseurl, headers=json.loads(Caseheaders), verify=False)
+                    # print("wwwwwwwwwwwwwwwwwwwww",response.json())
+                    Response = response.json()
+                    # return HttpResponse(json.dumps(result))
+
+
+                if len(Casekey) != 0 and len(Caseexpected) != 0:
+                    try:
+                        Caseexpected = eval(Caseexpected)
+                        Casekeys = Casekey.replace('(', '').replace(')', '')
+                        keys = tuple([str(i) for i in Casekeys.split(',')])
+                        resultkey=inerface_contrast.inerface_contrast(keys, response.json(), Caseexpected)
+                        resultcase['resultkey'] = resultkey
+                        resultcase['Response'] = Response
+                        result.append(resultcase)
+                    except:
+                        Response = {
+                            "code": '400',
+                            "msg": '预期值格式错误'
+
+                        }
+                        return HttpResponse(json.dumps(Response))
+
+
+    return HttpResponse(json.dumps(result))
+
+@csrf_exempt
+@ensure_csrf_cookie
+def caseapi_indexon(request):
+    caseapi_return = {
+        "code": '',
+        "msg": '',
+        "equipment": {
+            # 0: {
+            #     'phonevendorname': '111111',
+            #     'phoneequipmentname': '222222',
+            #     'phoneserialnumber': '333333',
+            #     'phone_state': '4444444',
+            # },
+        }
+    }
+    apilist = models.apiliston()
+    caselists = models.apiliston.objects.all()
+    print('1111111111111',caselists)
+    try:
+        for index in range(len(caselists)):
+            caseapi_return['equipment'][index] = {
+                'item': caselists[index].item,
+                'release':caselists[index].release,
+                'modules':caselists[index].modules,
+                'casename': caselists[index].casename,
+                'edit':caselists[index].case_id,
+                'go':caselists[index].case_id
+            }
+            return render(request, 'Dcc/caseapi_indexon.html', locals())
+    except:
+        return render(request, 'Dcc/caseapi_indexon.html',locals())
+
+@csrf_exempt
+@ensure_csrf_cookie
+def case_addon(request):
+    pass
+    return render(request, 'Dcc/caseaddon.html',locals())
+
+@csrf_exempt
+@ensure_csrf_cookie
+def case_saveon(request):
+    apilist = {}
+    if request.method == 'POST':
+        caselist = request.POST.get('request_cases_s')
+        caselist = caselist
+        caselist = json.loads(caselist)
+    if len(caselist)>0 and len(caselist['Items_list']['Items']) and len(caselist['Items_list']['Releases']) and len(caselist['Items_list']['Moduless']) and len(caselist['Items_list']['Casenames']) and(len(caselist['caselist'])):
+
+        item = caselist['Items_list']['Items']
+        release = caselist['Items_list']['Releases']
+        modules = caselist['Items_list']['Moduless']
+        casename = caselist['Items_list']['Casenames']
+        caselists = caselist['caselist']
+
+        apilist = models.apiliston()
+        apilist.item = item
+        apilist.release = release
+        apilist.modules = modules
+        apilist.casename = casename
+        apilist.caselists = caselists
+
+        try:
+            oldcase = models.apiliston.objects.get(item=item,release = release,modules = modules,casename = casename)
+            # oldcase.item = item
+            # oldcase.release = release
+            # oldcase.modules = modules
+            # oldcase.casename = casename
+            # oldcase.caselists = caselists
+            # oldcase.save()
+            print({'code': '200', 'message': '更新成功'})
+            return HttpResponse(json.dumps({'code': '404', 'message': '已经存在相同用例可以到用例集更新用例'}))
+        except:
+            apilist.save()
+            print({'code': '200', 'message': '添加成功'})
+            return HttpResponse(json.dumps({'code': '200', 'message': '添加成功'}))
+
+    else:
+        print({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'})
+        return HttpResponse(json.dumps({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'}))
+
+@csrf_exempt
+@ensure_csrf_cookie
+def searchcaseon(request):
+    apilist = {}
+
+    if request.method == 'POST':
+        Item = request.POST.get('Items')
+        Release = request.POST.get('Releases')
+        Modules= request.POST.get('Moduless')
+        Casename = request.POST.get('Casenames')
+
+        apilist = models.apiliston()
+
+        # print(len(Item))
+        # print(len(Release))
+        # print(len(Modules))
+        # print(len(Casename))
+
+
+        if len(Item)==0 and len(Release)==0 and len(Modules)==0 and len(Casename)==0:
+            caseapi_return = {
+                "code": '',
+                "msg": '',
+                "equipment": {
+                    # 0: {
+                    #     'phonevendorname': '111111',
+                    #     'phoneequipmentname': '222222',
+                    #     'phoneserialnumber': '333333',
+                    #     'phone_state': '4444444',
+                    # },
+                }
+            }
+            case = models.apiliston.objects.all()
+            for index in range(len(case)):
+                caseapi_return['equipment'][index] = {
+                    'item': case[index].item,
+                    'release': case[index].release,
+                    'modules': case[index].modules,
+                    'casename': case[index].casename,
+                    'edit': case[index].case_id,
+                    'go': case[index].case_id
+                }
+            # print(caseapi_return)
+            return render(request, 'Dcc/caseapi_indexon.html', locals())
+        elif len(Item)>0:
+            # print("111111111111")
+            caseapi_return = {
+                "code": '',
+                "msg": '',
+                "equipment": {
+                    # 0: {
+                    #     'phonevendorname': '111111',
+                    #     'phoneequipmentname': '222222',
+                    #     'phoneserialnumber': '333333',
+                    #     'phone_state': '4444444',
+                    # },
+                }
+            }
+            case = models.apiliston.objects.filter(item=Item)
+
+            for index in range(len(case)):
+                caseapi_return['equipment'][index] = {
+                    'item': case[index].item,
+                    'release': case[index].release,
+                    'modules': case[index].modules,
+                    'casename': case[index].casename,
+                    'edit': case[index].case_id,
+                    'go': case[index].case_id
+                }
+            # print(caseapi_return)
+            return render(request, 'Dcc/caseapi_indexon.html', locals())
+
+        elif len(Release)>0:
+            caseapi_return = {
+                "code": '',
+                "msg": '',
+                "equipment": {
+                    # 0: {
+                    #     'phonevendorname': '111111',
+                    #     'phoneequipmentname': '222222',
+                    #     'phoneserialnumber': '333333',
+                    #     'phone_state': '4444444',
+                    # },
+                }
+            }
+            case = models.apiliston.objects.filter(release=Release)
+
+            for index in range(len(case)):
+                caseapi_return['equipment'][index] = {
+                    'item': case[index].item,
+                    'release': case[index].release,
+                    'modules': case[index].modules,
+                    'casename': case[index].casename,
+                    'edit': case[index].case_id,
+                    'go': case[index].case_id
+                }
+            # print(caseapi_return)
+            return render(request, 'Dcc/caseapi_indexon.html', locals())
+
+        elif len(Modules)>0:
+            caseapi_return = {
+                "code": '',
+                "msg": '',
+                "equipment": {
+                    # 0: {
+                    #     'phonevendorname': '111111',
+                    #     'phoneequipmentname': '222222',
+                    #     'phoneserialnumber': '333333',
+                    #     'phone_state': '4444444',
+                    # },
+                }
+            }
+            case = models.apiliston.objects.filter(modules=Modules)
+
+            for index in range(len(case)):
+                caseapi_return['equipment'][index] = {
+                    'item': case[index].item,
+                    'release': case[index].release,
+                    'modules': case[index].modules,
+                    'casename': case[index].casename,
+                    'edit': case[index].case_id,
+                    'go': case[index].case_id
+                }
+            # print(caseapi_return)
+            return render(request, 'Dcc/caseapi_indexon.html', locals())
+
+        elif len(Casename)>0:
+            caseapi_return = {
+                "code": '',
+                "msg": '',
+                "equipment": {
+                    # 0: {
+                    #     'phonevendorname': '111111',
+                    #     'phoneequipmentname': '222222',
+                    #     'phoneserialnumber': '333333',
+                    #     'phone_state': '4444444',
+                    # },
+                }
+            }
+            case = models.apiliston.objects.filter(casename=Casename)
+
+            for index in range(len(case)):
+                caseapi_return['equipment'][index] = {
+                    'item': case[index].item,
+                    'release': case[index].release,
+                    'modules': case[index].modules,
+                    'casename': case[index].casename,
+                    'edit': case[index].case_id,
+                    'go': case[index].case_id
+                }
+            # print(caseapi_return)
+            return render(request, 'Dcc/caseapi_indexon.html', locals())
+
+@csrf_exempt
+@ensure_csrf_cookie
+def case_updateon(request):
+    apilist = {}
+    if request.method == 'POST':
+        caselist = request.POST.get('request_cases_s')
+        case_ids = request.POST.get('case_ids')
+        # print('case_ids',case_ids)
+        caselist = caselist
+        caselist = json.loads(caselist)
+        case_ids = json.loads(case_ids)
+    if len(caselist)>0 and len(caselist['Items_list']['Items']) and len(caselist['Items_list']['Releases']) and len(caselist['Items_list']['Moduless']) and len(caselist['Items_list']['Casenames']) and(len(caselist['caselist'])):
+
+        item = caselist['Items_list']['Items']
+        release = caselist['Items_list']['Releases']
+        modules = caselist['Items_list']['Moduless']
+        casename = caselist['Items_list']['Casenames']
+        caselists = caselist['caselist']
+
+        try:
+            oldcase = models.apiliston.objects.get(case_id=case_ids)
+            oldcase.item = item
+            oldcase.release = release
+            oldcase.modules = modules
+            oldcase.casename = casename
+            oldcase.caselists = caselists
+            oldcase.save()
+
+            # print({'code': '200', 'message': '添加成功'})
+            return HttpResponse(json.dumps({'code': '200', 'message': '更新成功'}))
+        except:
+            # print({'code': '404', 'message': '已经存在相同用例可以到用例集更新用例'})
+            return HttpResponse(json.dumps({'code': '404', 'message': '更新失败'}))
+
+    else:
+        # print({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'})
+        return HttpResponse(json.dumps({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'}))
 
 
 

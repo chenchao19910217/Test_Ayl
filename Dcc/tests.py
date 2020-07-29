@@ -30,24 +30,41 @@ if __name__ == "__main__":
     }
     response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
     print(response.json())
-    print(type(response.json()['data']['token']))
-    url = 'https://api.test.douchacha.com/api/user/info'
-    header = {
-        "s-id": "371",
-        "dcc-href": "https://www.douchacha.com/uppoint",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36",
-        "Content-Type": "application/json;charset=UTF-8",
-        "dcc-r": "https://www.douchacha.com/monitorlive",
-        "d-f": "MTU5Mjk4OTU0ODM5MDpUY08lMkZGOE91RlUlMkZEaThPb1ppQkR3cnZDaXNPb3dvVERqQlVPdzVURGxRN0NsM3JEa2clM0QlM0Q6M2Q4ZjdjMWIzZTg2NzAzOA==",
-        "j-id": "1m73",
-        "Sec-Fetch-Site": "same-site",
-        "Sec-Fetch-Mode": "cors",
-        "Sec-Fetch-Dest": "empty",
-        "Authorization": response.json()['data']['token']
-    }
 
-    response = request.get(url, headers=header)
-    print('aaaaaaaaa',response.json())
+
+
+    url = 'https://api.test.douchacha.com/api/user/login_out'
+    header = {
+                    "d-f": "MTU5NTkyMzA5MDQwMDpVc0szdzZBaE1UTWh3N0ljd3IwaE9TSENoRCUyRkRyTU9uRWpNVXdyeCUyRnc2a093NjAlMkJ3cjhRR0ElM0QlM0Q6MDA1M2NhODRiYWUxMGQ3OQ==",
+                    "dcc-href": "https://test.douchacha.com/workbench",
+                    "Authorization": response.json()['data']['token'],
+                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+                    "dcc-r": "",
+                    "Sec-Fetch-Site": "same-site",
+                    "Sec-Fetch-Mode": "cors",
+                    "Sec-Fetch-Dest": "empty"
+                }
+    response = request.get(url, headers=header, verify=False)
+    print(response.json())
+
+    # print(type(response.json()['data']['token']))
+    # url = 'https://api.test.douchacha.com/api/user/info'
+    # header = {
+    #     "s-id": "371",
+    #     "dcc-href": "https://www.douchacha.com/uppoint",
+    #     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36",
+    #     "Content-Type": "application/json;charset=UTF-8",
+    #     "dcc-r": "https://www.douchacha.com/monitorlive",
+    #     "d-f": "MTU5Mjk4OTU0ODM5MDpUY08lMkZGOE91RlUlMkZEaThPb1ppQkR3cnZDaXNPb3dvVERqQlVPdzVURGxRN0NsM3JEa2clM0QlM0Q6M2Q4ZjdjMWIzZTg2NzAzOA==",
+    #     "j-id": "1m73",
+    #     "Sec-Fetch-Site": "same-site",
+    #     "Sec-Fetch-Mode": "cors",
+    #     "Sec-Fetch-Dest": "empty",
+    #     "Authorization": response.json()['data']['token']
+    # }
+    #
+    # response = request.get(url, headers=header)
+    # print('aaaaaaaaa',response.json())
     # a=('["code"]', '["data"]["list"][0]["status"]', '["message"]')
     # Casebody="""('["code"]', '["data"]["user"]', '["msg"]')"""
     # Casebody='(code,msg)'

@@ -1,0 +1,53 @@
+[
+    {
+        "config": {
+            "name": "testcase description",
+            "variables": {}
+        }
+    },
+    {
+        "test": {
+            "name": "/api/user/login_out",
+            "request": {
+                "url": "https://api.test.douchacha.com/api/user/login_out",
+                "method": "GET",
+                "headers": {
+                    "d-f": "MTU5NTkyMzA5MDQwMDpVc0szdzZBaE1UTWh3N0ljd3IwaE9TSENoRCUyRkRyTU9uRWpNVXdyeCUyRnc2a093NjAlMkJ3cjhRR0ElM0QlM0Q6MDA1M2NhODRiYWUxMGQ3OQ==",
+                    "dcc-href": "https://test.douchacha.com/workbench",
+                    "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiUEMiLCJleHAiOjE1OTY1Mjc4MzAsInVzZXJJZCI6MTI4MDc3MDE4NjU1MTMxNjQ4MiwiY3JlYXRlRGF0ZSI6IjIwMjAtMDctMjggMTU6NTc6MTAifQ.Jklvo30eTwV831VSFcjJeua8GI4hPkWyUdBzRQohSI8",
+                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+                    "dcc-r": "",
+                    "Sec-Fetch-Site": "same-site",
+                    "Sec-Fetch-Mode": "cors",
+                    "Sec-Fetch-Dest": "empty"
+                }
+            },
+            "validate": [
+                {
+                    "eq": [
+                        "status_code",
+                        200
+                    ]
+                },
+                {
+                    "eq": [
+                        "headers.Content-Type",
+                        "application/json;charset=UTF-8"
+                    ]
+                },
+                {
+                    "eq": [
+                        "content.code",
+                        200
+                    ]
+                },
+                {
+                    "eq": [
+                        "content.msg",
+                        "退出成功"
+                    ]
+                }
+            ]
+        }
+    }
+]

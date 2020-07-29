@@ -61,13 +61,11 @@ class Core():#核心复用方法
         loc = locals()
         try:
             for key in contrast:
-                # print('1111111',parsing)
-                # print('2222222', expected_value)
-                # print(key)
                 exec("par_value_temp = parsing%s" % key)
-                parsin=loc['par_value_temp']
+                parsin = loc['par_value_temp']
                 exec("expected_value_temp = expected_value%s" % key)
                 expected=loc['expected_value_temp']
+                print("4444444444",parsin,expected)
                 if parsin == expected:
                     # print('ffffffffffffffffff',str(key))
                     error.append(key+':pass')
