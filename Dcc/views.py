@@ -155,7 +155,7 @@ def case_test(request):
                                                                                Casebody, Casedeliverlist_s)
                     response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=Caseheaders, verify=False)
                     Response = response.json()
-                    print('8888888888888888',Response)
+                    # print('8888888888888888',Response)
                 else:
                     response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=json.loads(Caseheaders), verify=False)
                     Response = response.json()
@@ -301,15 +301,15 @@ def case_save(request):
             # oldcase.casename = casename
             # oldcase.caselists = caselists
             # oldcase.save()
-            print({'code': '200', 'message': '更新成功'})
+            # print({'code': '200', 'message': '更新成功'})
             return HttpResponse(json.dumps({'code': '404', 'message': '已经存在相同用例可以到用例集更新用例'}))
         except:
             apilist.save()
-            print({'code': '200', 'message': '添加成功'})
+            # print({'code': '200', 'message': '添加成功'})
             return HttpResponse(json.dumps({'code': '200', 'message': '添加成功'}))
 
     else:
-        print({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'})
+        # print({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'})
         return HttpResponse(json.dumps({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'}))
 
 @csrf_exempt
@@ -1119,6 +1119,7 @@ def case_teston(request):
                     Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,
                                                                                Casebody, Casedeliverlist_s)
                     time.sleep(5)
+                    # print('222222222',Caseurl)
                     response = requests.get(Caseurl, headers=Caseheaders, verify=False)
                     Response = response.json()
 
@@ -1217,15 +1218,15 @@ def case_saveon(request):
             # oldcase.casename = casename
             # oldcase.caselists = caselists
             # oldcase.save()
-            print({'code': '200', 'message': '更新成功'})
+            # print({'code': '200', 'message': '更新成功'})
             return HttpResponse(json.dumps({'code': '404', 'message': '已经存在相同用例可以到用例集更新用例'}))
         except:
             apilist.save()
-            print({'code': '200', 'message': '添加成功'})
+            # print({'code': '200', 'message': '添加成功'})
             return HttpResponse(json.dumps({'code': '200', 'message': '添加成功'}))
 
     else:
-        print({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'})
+        # print({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'})
         return HttpResponse(json.dumps({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'}))
 
 @csrf_exempt

@@ -65,7 +65,7 @@ class Core():#核心复用方法
                 parsin = loc['par_value_temp']
                 exec("expected_value_temp = expected_value%s" % key)
                 expected=loc['expected_value_temp']
-                print("4444444444",parsin,expected)
+                # print("4444444444",parsin,expected)
                 if parsin == expected:
                     # print('ffffffffffffffffff',str(key))
                     error.append(key+':pass')

@@ -190,18 +190,18 @@
                 };
             for (let i=0;i<=ar;i++)
                 {
-                    console.log(i)
+                    {#console.log(i)#}
                     let newcase  = {};
                     newcase.he =window.he("uid");
-                    console.log('1111111111111',window.he("uid"));
+                    {#console.log('1111111111111',window.he("uid"));#}
                     let date = new Date().getTime();
-                    console.log('2222222222222',date);
+                    {#console.log('2222222222222',date);#}
                     let paramUrl = '/api/' + $(".Caseurl"+i).val().split('/api/')[1];
                     {#console.log(paramUrl);#}
                     let sign = paramUrl + date;
                     {#console.log(sign);#}
                     let sh = window.sh(sign);
-                    console.log('3333333333333',sh);
+                    {#console.log('3333333333333',sh);#}
                     newcase.Casesign=sh;
                     newcase.Casedata=date;
                     newcase.Casehe=window.he("uid");
