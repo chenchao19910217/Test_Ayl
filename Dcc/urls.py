@@ -25,5 +25,6 @@ urlpatterns = [
     path('casesaveon/',views.case_saveon),
     path('searchcaseon/',views.searchcaseon),
     path('case_updateon/',views.case_updateon),
+    path('testlist_indexon/',views.testlist_indexon),
 
 ]

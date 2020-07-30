@@ -91,9 +91,9 @@
                 </tr> {% endfor %}
             </tbody>
            </table>
-            <div class="alert-info navbar-fixed-bottom">
-            <button type="button" class="btn btn-info gotest" onclick="gotest_onclick()" >Test</button>
-            <div>
+{#            <div class="alert-info navbar-fixed-bottom">#}
+{#            <button type="button" class="btn btn-info gotest" onclick="gotest_onclick()" >Test</button>#}
+{#            <div>#}
     </div>
 
   </div>
@@ -101,9 +101,11 @@
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdn.bootcss.com/popper.js/1.15.0/umd/popper.js"></script>
     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+     <script src="https://api.douchacha.com/api/s.js"></script>
     <script>
         var user_name = '{{ request.session.user_name }}';
         var caseapi_return = null
+        localStorage.setItem("uid","1282576792302845953");
         function gotest_onclick()
         {
 
@@ -119,9 +121,22 @@
             {#console.log(caselist);#}
             caselist_s = JSON.stringify(caselist);
             user_names = JSON.stringify(user_name);
-             $.post("/Dcc/testlist_index/",{
+
+            window.he("uid");
+            let date = new Date().getTime();
+            let paramUrl = '/api/' + $(".Caseurl"+i).val().split('/api/')[1];
+            let sign = paramUrl + date;
+            let sh = window.sh(sign);
+            Casesign=sh;
+            Casedata=date;
+            Casehe=window.he("uid");
+
+             $.post("/Dcc/testlist_indexon/",{
+                    Casedata,
+                    Casesign,
                     caselist_s,
-                    user_names
+                    user_names,
+                    Casehe,
                 },
                 function(data,status){
                    {#console.log(data)#}
