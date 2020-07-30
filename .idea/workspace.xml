@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82a7e75e-d734-470c-895c-be224c7f3a09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Dcc/templates/Dcc/caseaddon.html" beforeDir="false" afterPath="$PROJECT_DIR$/Dcc/templates/Dcc/caseaddon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dcc/templates/Dcc/caseapi_indexon.html" beforeDir="false" afterPath="$PROJECT_DIR$/Dcc/templates/Dcc/caseapi_indexon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dcc/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dcc/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dcc/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dcc/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test_Ayl/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test_Ayl/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -101,16 +97,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Test_Ayl/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="97" column="62" lean-forward="true" selection-start-line="97" selection-start-column="62" selection-end-line="97" selection-end-column="62" />
+            <state relative-caret-position="260">
+              <caret line="100" column="1" lean-forward="true" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/caseapi_indexon.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="422">
@@ -196,8 +192,8 @@
       <find>prin</find>
       <find>testlist_index</find>
       <find>apilist</find>
-      <find>gotest_onclick</find>
       <find>casetest</find>
+      <find>gotest_onclick</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -252,11 +248,11 @@
         <option value="$PROJECT_DIR$/Dcc/admin.py" />
         <option value="$PROJECT_DIR$/Dcc/templates/Dcc/casediton.html" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/Test_Ayl/settings.py" />
         <option value="$PROJECT_DIR$/Dcc/templates/Dcc/caseaddon.html" />
         <option value="$PROJECT_DIR$/Dcc/urls.py" />
         <option value="$PROJECT_DIR$/Dcc/views.py" />
         <option value="$PROJECT_DIR$/Dcc/templates/Dcc/caseapi_indexon.html" />
+        <option value="$PROJECT_DIR$/Test_Ayl/settings.py" />
       </list>
     </option>
   </component>
@@ -511,12 +507,12 @@
       <workItem from="1595822228839" duration="2715000" />
       <workItem from="1595829000341" duration="29863000" />
       <workItem from="1596013105424" duration="14884000" />
-      <workItem from="1596077902693" duration="7858000" />
+      <workItem from="1596077902693" duration="7992000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="332556000" />
+    <option name="totallyTimeSpent" value="332690000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -531,11 +527,11 @@
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14962727" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14962727" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32970297" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.63045794" visible="true" weight="0.319802" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.63045794" weight="0.319802" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4978701" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -543,8 +539,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49946752" weight="0.32970297" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.36954206" side_tool="true" visible="true" weight="0.319802" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.67199147" weight="0.42376238" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.328541" side_tool="true" visible="true" weight="0.42376238" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.671459" visible="true" weight="0.42376238" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49840257" weight="0.32970297" />
       <window_info anchor="bottom" id="Structure" order="13" weight="0.24950495" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -908,13 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test_Ayl/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="97" column="62" lean-forward="true" selection-start-line="97" selection-start-column="62" selection-end-line="97" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dcc/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -964,6 +953,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
           <caret line="95" column="19" lean-forward="true" selection-start-line="93" selection-start-column="14" selection-end-line="95" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test_Ayl/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="100" column="1" lean-forward="true" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
         </state>
       </provider>
     </entry>
