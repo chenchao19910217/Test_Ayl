@@ -21,27 +21,27 @@ services:
 #    image:
 #      test_aly:latest
 
-
-    environment:
-      MYSQLLINK: mysql
-      MYSQLUSER: root
-      MYSQLPASSWD: abc1234
-      REDISLINK: redis
-    depends_on:
-      - mysql
-      - redis
-  mysql:
-    image:
-      mysql:5.7
-    environment:
-      MYSQL_ROOT_PASSWORD: "abc1234"
-    volumes:
-      - /volumes/mysql/data:/var/lib/mysql
-
-  redis:
-    image:
-      redis:5.0
-    volumes:
-      - /volumes/myredis/data:/data
-    command:
-      redis-server --appendonly yes
+#
+#    environment:
+#      MYSQLLINK: mysql
+#      MYSQLUSER: root
+#      MYSQLPASSWD: abc1234
+#      REDISLINK: redis
+#    depends_on:
+#      - mysql
+#      - redis
+#  mysql:
+#    image:
+#      mysql:5.7
+#    environment:
+#      MYSQL_ROOT_PASSWORD: "abc1234"
+#    volumes:
+#      - /Users/chenchao/PycharmProjects/mysql
+#
+#  redis:
+#    image:
+#      redis:5.0
+#    volumes:
+#      - /Users/chenchao/PycharmProjects/redis
+#    command:
+#      redis-server --appendonly yes
