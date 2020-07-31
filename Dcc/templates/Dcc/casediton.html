@@ -61,12 +61,17 @@
 
 {#                     {{keys}}{{ row.Casebody }}#}
             <div class="row justify-content-start">
-                <div class="col-8">
+            <div class="col-2">
+                    <div class="form-group">
+                        <input type="text" class="form-control Caseuid{{keys}}" placeholder="UID" >
+                    </div>
+                  </div>
+                <div class="col-7">
                     <div class="form-group">
                         <input  type="text" class="form-control Caseurl{{keys}}" placeholder="URL" >
                     </div>
                   </div>
-                  <div class="col-4">
+                  <div class="col-3">
                     <div class="form-group">
                         <select class="form-control Caserequest{{keys}}">
                             <option>GET</option>
@@ -197,6 +202,7 @@
                          {#console.log(data_Response[i].Caserequest);#}
                          {#console.log(data_Response[i].Casereplace);#}
                          $(".Caseurl"+JSON.stringify(i)).val(data_Response[i].Caseurl);
+                         $(".Caseuid"+JSON.stringify(i)).val(data_Response[i].Caseuid);
                          $(".Casebody"+JSON.stringify(i)).val(data_Response[i].Casebody);
                          $(".Caseheaders"+JSON.stringify(i)).val(data_Response[i].Caseheaders);
                          $(".Caseexpected"+JSON.stringify(i)).val(data_Response[i].Caseexpected);
@@ -219,6 +225,7 @@
             for (let i=0;i<=x;i++){
                  let newcase  = {};
                  newcase.Caseurl=$(".Caseurl"+i).val();
+                 newcase.Caseuid=$(".Caseuid"+i).val();
                  newcase.Caserequest=$(".Caserequest"+i).val();
                  newcase.Casebody=$(".Casebody"+i).val();
                  newcase.Caseheaders=$(".Caseheaders"+i).val();
@@ -258,7 +265,7 @@
 
         function appendrequest()
         {   x = x+1;
-            var caseadd = '<div id="request" data-index='+x+'><div class="row justify-content-start"><div class="col-8"><div class="form-group"><input type="text" class="form-control Caseurl'+x+'" placeholder="URL"></div></div><div class="col-4"><div class="form-group"><select  class="form-control Caserequest'+x+'"><option>GET</option><option>POST</option></select></div></div></div><div class="row justify-content-start"><div class="col-4"><div class="form-group alert-warning"><p>body请上传json格式</p></div></div><div class="col-4"><div class="form-group alert-warning"><p>headers请上传json格式</p></div></div><div class="col-4"><div class="form-group alert-warning"><p>预期值请上传json格式</p></div></div></div><div class="row justify-content-start"><div class="col-4"><div class="form-group"><textarea class="form-control Casebody'+x+'" rows="10" placeholder="body"></textarea></div></div><div class="col-4"><div class="form-group"><textarea class="form-control Caseheaders'+x+'" rows="10" placeholder="headers"></textarea></div></div><div class="col-4"><div class="form-group"><textarea class="form-control Caseexpected'+x+'" rows="10" placeholder="expected"></textarea></div></div></div><div class="row justify-content-start"><div class="col-6"><div class="form-group"><input  type="text" class="form-control Casedeliver'+x+'" placeholder="透传参数"></div></div><div class="col-6"><div class="form-group"><input type="text" class="form-control Casekey'+x+'" placeholder="检查key"></div></div></div><div class="row justify-content-start"><div class="col-12"><div class="form-group"><input  type="text" class="form-control replace'+x+'" placeholder="替换参数"></div></div></div><div class="row justify-content-start"><div class="col-6"><div class="form-group"><textarea class="form-control Response'+x+'" rows="10" placeholder="返回值"></textarea></div></div><div class="col-5"><div class="form-group"><textarea class="form-control result'+x+'" rows="10" placeholder="测试结果"></textarea></div></div><div class="col-1"><div class="form-group"><button data-casetest='+x+'  type="button" class="btn btn-info test'+x+'" onclick="casetest('+x+')">测试验证</button></div></div></div><div class="row justify-content-start"><div class="col"><div class="form-group alert-danger"><p>分界线--------------------------------------------------------------</p></div></div></div></div>'
+            var caseadd = '<div id="request" data-index='+x+'><div class="row justify-content-start"><div class="col-2"><div class="form-group"><input type="text" class="form-control Caseuid'+x+'" placeholder="UID" ></div></div><div class="col-8"><div class="form-group"><input type="text" class="form-control Caseurl'+x+'" placeholder="URL"></div></div><div class="col-4"><div class="form-group"><select  class="form-control Caserequest'+x+'"><option>GET</option><option>POST</option></select></div></div></div><div class="row justify-content-start"><div class="col-4"><div class="form-group alert-warning"><p>body请上传json格式</p></div></div><div class="col-4"><div class="form-group alert-warning"><p>headers请上传json格式</p></div></div><div class="col-4"><div class="form-group alert-warning"><p>预期值请上传json格式</p></div></div></div><div class="row justify-content-start"><div class="col-4"><div class="form-group"><textarea class="form-control Casebody'+x+'" rows="10" placeholder="body"></textarea></div></div><div class="col-4"><div class="form-group"><textarea class="form-control Caseheaders'+x+'" rows="10" placeholder="headers"></textarea></div></div><div class="col-4"><div class="form-group"><textarea class="form-control Caseexpected'+x+'" rows="10" placeholder="expected"></textarea></div></div></div><div class="row justify-content-start"><div class="col-6"><div class="form-group"><input  type="text" class="form-control Casedeliver'+x+'" placeholder="透传参数"></div></div><div class="col-6"><div class="form-group"><input type="text" class="form-control Casekey'+x+'" placeholder="检查key"></div></div></div><div class="row justify-content-start"><div class="col-12"><div class="form-group"><input  type="text" class="form-control replace'+x+'" placeholder="替换参数"></div></div></div><div class="row justify-content-start"><div class="col-6"><div class="form-group"><textarea class="form-control Response'+x+'" rows="10" placeholder="返回值"></textarea></div></div><div class="col-5"><div class="form-group"><textarea class="form-control result'+x+'" rows="10" placeholder="测试结果"></textarea></div></div><div class="col-1"><div class="form-group"><button data-casetest='+x+'  type="button" class="btn btn-info test'+x+'" onclick="casetest('+x+')">测试验证</button></div></div></div><div class="row justify-content-start"><div class="col"><div class="form-group alert-danger"><p>分界线--------------------------------------------------------------</p></div></div></div></div>'
                 $('#request').append(caseadd);        // 追加新元素
         }
         function casetest(var1)
@@ -271,6 +278,8 @@
             for (let i=0;i<=ar;i++)
                 {
                     console.log(i)
+                    Caseuid=$(".Caseuid"+i).val();
+                    localStorage.setItem("uid",Caseuid);
                     let newcase  = {};
                     newcase.he =window.he("uid");
                     console.log('1111111111111',window.he("uid"));
