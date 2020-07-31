@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82a7e75e-d734-470c-895c-be224c7f3a09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Test_Ayl/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test_Ayl/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dcc/templates/Dcc/caseaddon.html" beforeDir="false" afterPath="$PROJECT_DIR$/Dcc/templates/Dcc/caseaddon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dcc/templates/Dcc/casediton.html" beforeDir="false" afterPath="$PROJECT_DIR$/Dcc/templates/Dcc/casediton.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dcc/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dcc/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dcc/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="923" column="16" selection-start-line="923" selection-start-column="4" selection-end-line="923" selection-end-column="16" />
+            <state relative-caret-position="3310">
+              <caret line="1202" column="41" selection-start-line="1202" selection-start-column="32" selection-end-line="1202" selection-end-column="41" />
               <folding>
                 <element signature="e#769#1386#0" />
                 <element signature="e#1416#1523#0" />
@@ -66,75 +68,11 @@
                 <element signature="e#27226#28577#0" />
                 <element signature="e#28642#34304#0" />
                 <element signature="e#34371#38252#0" />
-                <element signature="e#39453#48656#0" />
                 <element signature="e#48729#49642#0" />
                 <element signature="e#49834#51564#0" />
                 <element signature="e#51630#57314#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dcc/testui/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Test_Ayl/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="100" column="1" lean-forward="true" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/caseaddon.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="249" column="8" selection-start-line="249" selection-start-column="8" selection-end-line="249" selection-end-column="8" />
-              <folding>
-                <element signature="e#10002#12551#0#HTML" />
-                <element signature="e#12592#14363#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/casediton.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="204" column="87" lean-forward="true" selection-start-line="204" selection-start-column="24" selection-end-line="204" selection-end-column="87" />
-              <folding>
-                <element signature="e#13595#16300#0#HTML" />
-                <element signature="e#16341#18335#0#HTML" />
+                <element signature="e#57381#58941#0" />
+                <element signature="e#59013#69329#0" />
               </folding>
             </state>
           </provider>
@@ -143,15 +81,52 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dcc/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="43" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="43" />
+            <state relative-caret-position="345">
+              <caret line="23" column="39" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/casediton.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2700">
+              <caret line="180" column="24" lean-forward="true" selection-start-line="180" selection-start-column="24" selection-end-line="180" selection-end-column="24" />
+              <folding>
+                <element signature="e#8311#9457#0#HTML" />
+                <element signature="e#9513#11461#0#HTML" />
+                <element signature="e#11504#14054#0#HTML" />
+                <element signature="e#17151#19145#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Test_Ayl/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="98" column="55" lean-forward="true" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/caseaddon.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="179" column="12" lean-forward="true" selection-start-line="179" selection-start-column="12" selection-end-line="179" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/requests/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="949" selection-start-line="949" selection-end-line="949" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -167,9 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CRONTAB_COMMAND_PREFIX</find>
-      <find>console</find>
-      <find>INSTALLED_APPS</find>
       <find>he()</find>
       <find>case_test</find>
       <find>searchcase</find>
@@ -181,8 +153,6 @@
       <find>caseteston</find>
       <find>case_teston</find>
       <find>BASE_DIR</find>
-      <find>caseaddon</find>
-      <find>case_addon</find>
       <find>caseapion</find>
       <find>caseapi_indexon</find>
       <find>apilist</find>
@@ -194,9 +164,14 @@
       <find>console.log</find>
       <find>docker-compose logs</find>
       <find>col-6</find>
-      <find>case_on_edit</find>
       <find>justify-content-start</find>
       <find>casesave()</find>
+      <find>case_on_edit</find>
+      <find>newcase.Casedata=date;</find>
+      <find>Casehe</find>
+      <find>he</find>
+      <find>caseaddon</find>
+      <find>case_addon</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -247,14 +222,14 @@
         <option value="$PROJECT_DIR$/Dcc/admin.py" />
         <option value="$PROJECT_DIR$/Dcc/urls.py" />
         <option value="$PROJECT_DIR$/Dcc/templates/Dcc/caseapi_indexon.html" />
-        <option value="$PROJECT_DIR$/Dcc/views.py" />
         <option value="$PROJECT_DIR$/core/core.py" />
         <option value="$PROJECT_DIR$/Dcc/templates/Dcc/caseadd.html" />
         <option value="$PROJECT_DIR$/Dcc/templates/Dcc/caseedit.html" />
         <option value="$PROJECT_DIR$/Dcc/testui/test.py" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/Dcc/templates/Dcc/casediton.html" />
+        <option value="$PROJECT_DIR$/Dcc/views.py" />
         <option value="$PROJECT_DIR$/Dcc/templates/Dcc/caseaddon.html" />
+        <option value="$PROJECT_DIR$/Dcc/templates/Dcc/casediton.html" />
         <option value="$PROJECT_DIR$/Test_Ayl/settings.py" />
       </list>
     </option>
@@ -515,12 +490,12 @@
       <workItem from="1595822228839" duration="2715000" />
       <workItem from="1595829000341" duration="29863000" />
       <workItem from="1596013105424" duration="14884000" />
-      <workItem from="1596077902693" duration="16912000" />
+      <workItem from="1596077902693" duration="26437000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341610000" />
+    <option name="totallyTimeSpent" value="351135000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -535,11 +510,11 @@
     <frame x="1440" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14962727" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14962727" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32970297" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6288605" weight="0.319802" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6288605" visible="true" weight="0.319802" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4978701" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -547,8 +522,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49946752" weight="0.32970297" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.33067092" side_tool="true" visible="true" weight="0.42376238" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.66932905" visible="true" weight="0.42376238" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.33067092" side_tool="true" weight="0.42376238" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.66932905" weight="0.42376238" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49840257" weight="0.32970297" />
       <window_info anchor="bottom" id="Structure" order="13" weight="0.24950495" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -578,13 +553,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/requests/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="446" selection-start-line="446" selection-end-line="446" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="742">
@@ -904,17 +872,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/requests/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="949" selection-start-line="949" selection-end-line="949" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Dcc/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="43" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="43" />
+        <state relative-caret-position="345">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/casediton.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2700">
+          <caret line="180" column="24" lean-forward="true" selection-start-line="180" selection-start-column="24" selection-end-line="180" selection-end-column="24" />
+          <folding>
+            <element signature="e#8311#9457#0#HTML" />
+            <element signature="e#9513#11461#0#HTML" />
+            <element signature="e#11504#14054#0#HTML" />
+            <element signature="e#17151#19145#0#HTML" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Dcc/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="923" column="16" selection-start-line="923" selection-start-column="4" selection-end-line="923" selection-end-column="16" />
+        <state relative-caret-position="3310">
+          <caret line="1202" column="41" selection-start-line="1202" selection-start-column="32" selection-end-line="1202" selection-end-column="41" />
           <folding>
             <element signature="e#769#1386#0" />
             <element signature="e#1416#1523#0" />
@@ -929,43 +920,26 @@
             <element signature="e#27226#28577#0" />
             <element signature="e#28642#34304#0" />
             <element signature="e#34371#38252#0" />
-            <element signature="e#39453#48656#0" />
             <element signature="e#48729#49642#0" />
             <element signature="e#49834#51564#0" />
             <element signature="e#51630#57314#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/casediton.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="204" column="87" lean-forward="true" selection-start-line="204" selection-start-column="24" selection-end-line="204" selection-end-column="87" />
-          <folding>
-            <element signature="e#13595#16300#0#HTML" />
-            <element signature="e#16341#18335#0#HTML" />
+            <element signature="e#57381#58941#0" />
+            <element signature="e#59013#69329#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Dcc/templates/Dcc/caseaddon.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="249" column="8" selection-start-line="249" selection-start-column="8" selection-end-line="249" selection-end-column="8" />
-          <folding>
-            <element signature="e#10002#12551#0#HTML" />
-            <element signature="e#12592#14363#0#HTML" />
-          </folding>
+        <state relative-caret-position="417">
+          <caret line="179" column="12" lean-forward="true" selection-start-line="179" selection-start-column="12" selection-end-line="179" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test_Ayl/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="100" column="1" lean-forward="true" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
+        <state relative-caret-position="420">
+          <caret line="98" column="55" lean-forward="true" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="55" />
         </state>
       </provider>
     </entry>

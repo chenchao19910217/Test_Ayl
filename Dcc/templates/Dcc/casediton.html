@@ -185,12 +185,12 @@
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdn.bootcss.com/popper.js/1.15.0/umd/popper.js"></script>
     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://api.douchacha.com/api/s.js"></script>
+    <script src="https://api.test.douchacha.com/api/s.js"></script>
     <script>
         var x = {{ x }};
         let case_ids = {{case_id}}
             caselist_s = JSON.stringify(case_ids);
-        localStorage.setItem("uid","1282576792302845953");
+        {#localStorage.setItem("uid","1282576792302845953");#}
         $(document).ready(
 
             $.post("/Dcc/case_on_edit/",{
@@ -265,7 +265,7 @@
 
         function appendrequest()
         {   x = x+1;
-            var caseadd = '<div id="request" data-index='+x+'><div class="row justify-content-start"><div class="col-2"><div class="form-group"><input type="text" class="form-control Caseuid'+x+'" placeholder="UID" ></div></div><div class="col-8"><div class="form-group"><input type="text" class="form-control Caseurl'+x+'" placeholder="URL"></div></div><div class="col-4"><div class="form-group"><select  class="form-control Caserequest'+x+'"><option>GET</option><option>POST</option></select></div></div></div><div class="row justify-content-start"><div class="col-4"><div class="form-group alert-warning"><p>body请上传json格式</p></div></div><div class="col-4"><div class="form-group alert-warning"><p>headers请上传json格式</p></div></div><div class="col-4"><div class="form-group alert-warning"><p>预期值请上传json格式</p></div></div></div><div class="row justify-content-start"><div class="col-4"><div class="form-group"><textarea class="form-control Casebody'+x+'" rows="10" placeholder="body"></textarea></div></div><div class="col-4"><div class="form-group"><textarea class="form-control Caseheaders'+x+'" rows="10" placeholder="headers"></textarea></div></div><div class="col-4"><div class="form-group"><textarea class="form-control Caseexpected'+x+'" rows="10" placeholder="expected"></textarea></div></div></div><div class="row justify-content-start"><div class="col-6"><div class="form-group"><input  type="text" class="form-control Casedeliver'+x+'" placeholder="透传参数"></div></div><div class="col-6"><div class="form-group"><input type="text" class="form-control Casekey'+x+'" placeholder="检查key"></div></div></div><div class="row justify-content-start"><div class="col-12"><div class="form-group"><input  type="text" class="form-control replace'+x+'" placeholder="替换参数"></div></div></div><div class="row justify-content-start"><div class="col-6"><div class="form-group"><textarea class="form-control Response'+x+'" rows="10" placeholder="返回值"></textarea></div></div><div class="col-5"><div class="form-group"><textarea class="form-control result'+x+'" rows="10" placeholder="测试结果"></textarea></div></div><div class="col-1"><div class="form-group"><button data-casetest='+x+'  type="button" class="btn btn-info test'+x+'" onclick="casetest('+x+')">测试验证</button></div></div></div><div class="row justify-content-start"><div class="col"><div class="form-group alert-danger"><p>分界线--------------------------------------------------------------</p></div></div></div></div>'
+            var caseadd = '<div id="request" data-index='+x+'><div class="row justify-content-start"><div class="col-2"><div class="form-group"><input type="text" class="form-control Caseuid'+x+'" placeholder="UID" ></div></div><div class="col-7"><div class="form-group"><input type="text" class="form-control Caseurl'+x+'" placeholder="URL"></div></div><div class="col-3"><div class="form-group"><select  class="form-control Caserequest'+x+'"><option>GET</option><option>POST</option></select></div></div></div><div class="row justify-content-start"><div class="col-4"><div class="form-group alert-warning"><p>body请上传json格式</p></div></div><div class="col-4"><div class="form-group alert-warning"><p>headers请上传json格式</p></div></div><div class="col-4"><div class="form-group alert-warning"><p>预期值请上传json格式</p></div></div></div><div class="row justify-content-start"><div class="col-4"><div class="form-group"><textarea class="form-control Casebody'+x+'" rows="10" placeholder="body"></textarea></div></div><div class="col-4"><div class="form-group"><textarea class="form-control Caseheaders'+x+'" rows="10" placeholder="headers"></textarea></div></div><div class="col-4"><div class="form-group"><textarea class="form-control Caseexpected'+x+'" rows="10" placeholder="expected"></textarea></div></div></div><div class="row justify-content-start"><div class="col-6"><div class="form-group"><input  type="text" class="form-control Casedeliver'+x+'" placeholder="透传参数"></div></div><div class="col-6"><div class="form-group"><input type="text" class="form-control Casekey'+x+'" placeholder="检查key"></div></div></div><div class="row justify-content-start"><div class="col-12"><div class="form-group"><input  type="text" class="form-control replace'+x+'" placeholder="替换参数"></div></div></div><div class="row justify-content-start"><div class="col-6"><div class="form-group"><textarea class="form-control Response'+x+'" rows="10" placeholder="返回值"></textarea></div></div><div class="col-5"><div class="form-group"><textarea class="form-control result'+x+'" rows="10" placeholder="测试结果"></textarea></div></div><div class="col-1"><div class="form-group"><button data-casetest='+x+'  type="button" class="btn btn-info test'+x+'" onclick="casetest('+x+')">测试验证</button></div></div></div><div class="row justify-content-start"><div class="col"><div class="form-group alert-danger"><p>分界线--------------------------------------------------------------</p></div></div></div></div>'
                 $('#request').append(caseadd);        // 追加新元素
         }
         function casetest(var1)
@@ -277,32 +277,62 @@
                 };
             for (let i=0;i<=ar;i++)
                 {
-                    console.log(i)
-                    Caseuid=$(".Caseuid"+i).val();
-                    localStorage.setItem("uid",Caseuid);
                     let newcase  = {};
-                    newcase.he =window.he("uid");
-                    console.log('1111111111111',window.he("uid"));
-                    let date = new Date().getTime();
-                    console.log('2222222222222',date);
-                    let paramUrl = '/api/' + $(".Caseurl"+i).val().split('/api/')[1];
-                    {#console.log(paramUrl);#}
-                    let sign = paramUrl + date;
-                    {#console.log(sign);#}
-                    let sh = window.sh(sign);
-                    console.log('3333333333333',sh);
-                    newcase.Casesign=sh;
-                    newcase.Casedata=date;
-                    newcase.Casehe=window.he("uid");
+                    {#console.log(i)#}
+                    Caseuid=$(".Caseuid"+i).val();
+                    let time_dt = new Date().getTime();
+                    localStorage.setItem("dt",time_dt);
+                    console.log("a:"+typeof(time_dt));
 
+                    let s=Caseuid.length;
+
+                    if (s>7){
+                        localStorage.setItem("uid",Caseuid);
+                        {#newcase.he =window.he("uid");#}
+                        newcase.Casehe=window.he("uid");
+                    }else{
+
+                        {#newcase.he =window.he("dt");#}
+                        newcase.Casehe=window.he("dt");
+                        console.log("走了这")
+                    }
+
+
+
+                    let paramUrl = '/api/' + $(".Caseurl"+i).val().split('/api/')[1];
+                    console.log(paramUrl)
+                    let sign = paramUrl + time_dt;
+                    let sh = window.sh(sign);
+
+                    newcase.Casesign=sh;
+                    newcase.Casedata=time_dt;
 
                     newcase.Caseurl=$(".Caseurl"+i).val();
-                    console.log($(".Caseurl"+i).val())
+
+                    {#console.log($(".Caseurl"+i).val())#}
                     newcase.Caserequest=$(".Caserequest"+i).val();
                     newcase.Casebody=$(".Casebody"+i).val();
-                    console.log($(".Casebody"+i).val())
-                    newcase.Caseheaders=$(".Caseheaders"+i).val();
-                    console.log($(".Caseheaders"+i).val())
+                    {#console.log($(".Casebody"+i).val())#}
+
+                    const headerToObj = JSON.parse($(".Caseheaders"+i).val())
+                    headerToObj['d-t']=time_dt.toString();
+
+                    try {
+                        let v = window.btoa(window.v() + ',' + window.hi())
+                        headerToObj['d-v']= v
+                    } catch {
+
+                    }
+
+                    const headerStr = JSON.stringify(headerToObj)
+
+                    console.log(headerStr)
+
+                    {#console.log('d-t:',headerToObj['d-t']);#}
+                    newcase.Caseheaders=headerStr;
+
+                    {#console.log('Caseheaders',$(".Caseheaders"+i).val())#}
+
                     newcase.Caseexpected=$(".Caseexpected"+i).val();
                     newcase.Casedeliver=$(".Casedeliver"+i).val();
                     newcase.Casekey=$(".Casekey"+i).val();

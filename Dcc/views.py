@@ -984,6 +984,9 @@ def case_teston(request):
                 Casesign = caselist[case]['Casesign'].replace(" ", "")
                 Casedata = caselist[case]['Casedata']
                 Casehe = caselist[case]['Casehe'].replace(" ", "")
+                print(Caseheaders)
+                print(Casesign)
+                print(Casehe)
                 # print('11123',Casehe,Casedata,Casesign)
                 Caseurl = Caseurl + '?ts=' + str(Casedata) + '&' + 'he=' + Casehe + '&' + 'sign=' + Casesign
                 # except:
@@ -1020,14 +1023,26 @@ def case_teston(request):
 
 
                 elif len(Casedeliver) > 0:
+                    print(json.loads(Caseheaders))
+                    print('555555',Caseurl)
                     response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=json.loads(Caseheaders), verify=False)
                     Response = response.json()
                     Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
                     keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
                     loc = locals()
+                    print(response.json())
                     for key in keys:
-                        exec("Casedeliverlist = Response%s" % key)
-                        Casedeliverlist_s[key] = loc['Casedeliverlist']
+                        print(key)
+                        try:
+                            exec("Casedeliverlist = Response%s" % key)
+                            Casedeliverlist_s[key] = loc['Casedeliverlist']
+                        except:
+                            Response = {
+                                "code": '400',
+                                "msg": '返回值没有相应透传参数'+str(Response)
+
+                            }
+                            # return HttpResponse(json.dumps(Response))
 
                 elif len(Casereplace) > 0:
                     Casereplace = eval(Casereplace)
