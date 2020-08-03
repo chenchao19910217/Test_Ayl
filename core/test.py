@@ -73,16 +73,16 @@ if __name__ == "__main__":
     #     MyThread("thread-" + str(i)).start()
 
     request = requests.Session()
-    # url = 'https://api.douchacha.com/api/user/login?ts=1596454744029&he=G2vTQ3GTulGTNjVwZHbcwqZrw4DwwoehwoL%3D&sign=ed68caf49871c9f6'
-    # payload = {"phone": "18730301074", "password": "9f993dbea21fa110e9933965c5f968d37e0e42ea"}
-    # header = {
-    #     "User-Agent": "Mozilla/5.0(WindowsNT10.0;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/83.0.4103.116Safari/537.36",
-    #     "Content-Type": "application/json;charset=UTF-8", "Content-Length": "80", "d-t": "1596454744029",
-    #     "d-v": "NCx3b1B5ZkhieHc3aCUyQndwSU13cHJUcjhiUndxNU1FZGZiWnhHVW5zYmR3N1VUb3glMkZUblNsOWYzdlVRaEtUbnNmcHdyeEF3ckNVcE9RMWFkYjNobkNUdGtHVHNsS1VzamtVdGRmd3c2clRzeEVrYWRiRWFkYnN3NmdVTE5VVU5kYmxTMkNVbU9ZVW5OR1V2WXZVTXh6VG9zYjN3cmFjQUhiYnc0QXU="}
-    # response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
-    #
-    # token = response.json()['data']['token']
-    # print(response.json())
+    url = 'https://api.douchacha.com/api/user/login?ts=1596454744029&he=G2vTQ3GTulGTNjVwZHbcwqZrw4DwwoehwoL%3D&sign=ed68caf49871c9f6'
+    payload = {"phone": "18730301074", "password": "9f993dbea21fa110e9933965c5f968d37e0e42ea"}
+    header = {
+        "User-Agent": "Mozilla/5.0(WindowsNT10.0;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/83.0.4103.116Safari/537.36",
+        "Content-Type": "application/json;charset=UTF-8", "Content-Length": "80", "d-t": "1596454744029",
+        "d-v": "NCx3b1B5ZkhieHc3aCUyQndwSU13cHJUcjhiUndxNU1FZGZiWnhHVW5zYmR3N1VUb3glMkZUblNsOWYzdlVRaEtUbnNmcHdyeEF3ckNVcE9RMWFkYjNobkNUdGtHVHNsS1VzamtVdGRmd3c2clRzeEVrYWRiRWFkYnN3NmdVTE5VVU5kYmxTMkNVbU9ZVW5OR1V2WXZVTXh6VG9zYjN3cmFjQUhiYnc0QXU="}
+    response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
+
+    token = response.json()['data']['token']
+    print(response.json())
 
     url = 'https://api.douchacha.com/api/tiktok/monitor/live/live_list?ts=1596462497068&he=wrRJwrHLZkVxZHfcGQkUu8f2wp7ULHfzwoOUq8ft&sign=78a93e9010e085fb'
     payload = {	"page_no":1,	"page_size":50,	"params_data":{		"nick_name":"",		"status":["ING","WAIT","SUCCESS","CANCEL"]	}}

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82a7e75e-d734-470c-895c-be224c7f3a09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Test_Ayl/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test_Ayl/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+            <state relative-caret-position="340">
+              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
               <folding>
                 <element signature="e#1475#1507#0" expanded="true" />
               </folding>
@@ -130,11 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test_Ayl/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="101" column="25" lean-forward="true" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
+            <state relative-caret-position="275">
+              <caret line="95" column="16" lean-forward="true" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -283,9 +283,9 @@
         <option value="$PROJECT_DIR$/Dcc/tests.py" />
         <option value="$PROJECT_DIR$/core/test1.py" />
         <option value="$PROJECT_DIR$/Dcc/views.py" />
-        <option value="$PROJECT_DIR$/core/test.py" />
         <option value="$PROJECT_DIR$/Dcc/templates/Dcc/casediton.html" />
         <option value="$PROJECT_DIR$/Test_Ayl/settings.py" />
+        <option value="$PROJECT_DIR$/core/test.py" />
       </list>
     </option>
   </component>
@@ -533,12 +533,12 @@
       <workItem from="1595829000341" duration="29863000" />
       <workItem from="1596013105424" duration="14884000" />
       <workItem from="1596077902693" duration="26914000" />
-      <workItem from="1596434090293" duration="23181000" />
+      <workItem from="1596434090293" duration="23414000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="374793000" />
+    <option name="totallyTimeSpent" value="375026000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -890,18 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="123" column="14" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="14" />
-          <folding>
-            <element signature="e#536#592#0" />
-            <element signature="e#632#1857#0" />
-            <element signature="e#1968#2848#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/core/handlers/exception.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -927,16 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
-          <folding>
-            <element signature="e#1475#1507#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1002,8 +980,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Test_Ayl/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="101" column="25" lean-forward="true" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
+        <state relative-caret-position="275">
+          <caret line="95" column="16" lean-forward="true" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="123" column="14" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="14" />
+          <folding>
+            <element signature="e#536#592#0" />
+            <element signature="e#632#1857#0" />
+            <element signature="e#1968#2848#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+          <folding>
+            <element signature="e#1475#1507#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
