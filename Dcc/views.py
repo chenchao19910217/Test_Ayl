@@ -137,11 +137,19 @@ def case_test(request):
 
                     response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=Caseheaders, verify=False)
                     Response = response.json()
+                    Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
+                    keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
+                    loc = locals()
+                    for key in keys:
+                        print(key)
+                        exec("Casedeliverlist = Response%s" % key)
+                        Casedeliverlist_s[key] = loc['Casedeliverlist']
 
 
                 elif len(Casedeliver) > 0:
                     response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=json.loads(Caseheaders), verify=False)
                     Response = response.json()
+                    print(response.json())
                     Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
                     keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
                     loc = locals()
@@ -190,6 +198,7 @@ def case_test(request):
                 Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
                 Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
                 Casereplace = caselist[case]['Casereplace'].replace(" ", "")
+                Caseurl = Caseurl + '?'
                 # except:
                 #     Response = {
                 #         "code": '400',
@@ -224,6 +233,12 @@ def case_test(request):
                     Caseheaders,Caseurl,Casebody=inerface_contrast.replace(Casereplace, Caseheaders, Caseurl, Casebody,Casedeliverlist_s)
                     response = requests.get(Caseurl, headers=json.loads(Caseheaders), verify=False)
                     Response = response.json()
+                    Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
+                    keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
+                    loc = locals()
+                    for key in keys:
+                        exec("Casedeliverlist = Response%s" % key)
+                        Casedeliverlist_s[key] = loc['Casedeliverlist']
 
                 elif len(Casedeliver)>0:
                     response = requests.get(Caseurl, headers=json.loads(Caseheaders), verify=False)
@@ -237,9 +252,12 @@ def case_test(request):
 
                 elif len(Casereplace) > 0:
                     Casereplace = eval(Casereplace)
+                    print('这里Casedeliverlist_s',Casedeliverlist_s)
                     Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,
                                                                                Casebody, Casedeliverlist_s)
                     time.sleep(5)
+                    print('这里Caseurl',Caseurl)
+                    print('这里Caseheaders', Caseheaders)
                     response = requests.get(Caseurl, headers=Caseheaders, verify=False)
                     Response = response.json()
 
@@ -1002,12 +1020,12 @@ def case_teston(request):
                     Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,Casebody, Casedeliverlist_s)
 
                     response = requests.post(Caseurl, data=Casebody, headers=Caseheaders, verify=False)
-                    print('这里',Casebody)
-                    print('这里', Caseurl)
-                    print('这里', Caseheaders)
+                    # print('这里',Casebody)
+                    # print('这里', Caseurl)
+                    # print('这里', Caseheaders)
 
                     Response = response.json()
-                    print(response.json())
+                    # print(response.json())
 
                     Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
                     keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
@@ -1016,12 +1034,12 @@ def case_teston(request):
                         exec("Casedeliverlist = Response%s" % key)
                         Casedeliverlist_s[key] = loc['Casedeliverlist']
                 elif len(Casedeliver) > 0:
-                    print('在这里Caseurl',Caseurl)
-                    print('在这里Caseheaders', Caseheaders)
-                    print('在这里Casebody', Casebody)
+                    # print('在这里Caseurl',Caseurl)
+                    # print('在这里Caseheaders', Caseheaders)
+                    # print('在这里Casebody', Casebody)
                     response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=json.loads(Caseheaders), verify=False)
                     Response = response.json()
-                    print(response.json())
+                    # print(response.json())
                     Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
                     keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
                     loc = locals()
@@ -1065,8 +1083,6 @@ def case_teston(request):
 
                         }
                         return HttpResponse(json.dumps(Response))
-
-
             elif Caserequest == 'GET':
                 Caseurl = caselist[case]['Caseurl']
                 Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
