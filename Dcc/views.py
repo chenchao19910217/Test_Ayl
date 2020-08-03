@@ -1000,8 +1000,15 @@ def case_teston(request):
                 if len(Casereplace) > 0 and len(Casedeliver) > 0:
                     Casereplace = eval(Casereplace)
                     Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,Casebody, Casedeliverlist_s)
-                    response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=Caseheaders, verify=False)
+
+                    response = requests.post(Caseurl, data=Casebody, headers=Caseheaders, verify=False)
+                    print('这里',Casebody)
+                    print('这里', Caseurl)
+                    print('这里', Caseheaders)
+
                     Response = response.json()
+                    print(response.json())
+
                     Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
                     keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
                     loc = locals()
@@ -1009,8 +1016,12 @@ def case_teston(request):
                         exec("Casedeliverlist = Response%s" % key)
                         Casedeliverlist_s[key] = loc['Casedeliverlist']
                 elif len(Casedeliver) > 0:
+                    print('在这里Caseurl',Caseurl)
+                    print('在这里Caseheaders', Caseheaders)
+                    print('在这里Casebody', Casebody)
                     response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=json.loads(Caseheaders), verify=False)
                     Response = response.json()
+                    print(response.json())
                     Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
                     keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
                     loc = locals()

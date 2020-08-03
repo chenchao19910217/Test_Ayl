@@ -82,42 +82,45 @@ class Core():#核心复用方法
         print(Casedeliverlist_s)
         loc = locals()
         for key in keys:
-            if 'header' in key:
-                Caseheaders=json.loads(Caseheaders)
-                # print('1111111111111',keys[key])
-                # print('2222222222222',Casedeliverlist_s)
-                # print(Casedeliverlist_s['["data"]["token"]'])
+            try:
+                if 'header' in key:
+                    Caseheaders=json.loads(Caseheaders)
+                    # print('1111111111111',keys[key])
+                    # print('2222222222222',Casedeliverlist_s)
+                    # print(Casedeliverlist_s['["data"]["token"]'])
 
-                b = eval("""Casedeliverlist_s['%s']""" % keys[key])
-                aaa=key.replace("['header']:", '')
-                # print('2222222222222222222',aaa)
-                exec('Caseheaders["%s"]=b'%aaa)
-                Caseheaders = loc['Caseheaders']
-                # print('11111111111111111111',Caseheaders)
-            elif 'body' in str(key):
-                # print(Casebody)
-                if len(Casebody) != 0:
-                    # print('aaaaaaaaaaa',Casebody)
-                    Casebody = json.loads(Casebody)
                     b = eval("""Casedeliverlist_s['%s']""" % keys[key])
-                    aaa = key.replace("['body']:", '')
-                    # print(aaa)
-                    exec('Casebody["%s"]=b' % aaa)
-                    Casebody = loc['Casebody']
-                else:
-                    Casebody = None
+                    aaa=key.replace("['header']:", '')
+                    # print('2222222222222222222',aaa)
+                    exec('Caseheaders["%s"]=b'%aaa)
+                    Caseheaders = loc['Caseheaders']
+                    # print('11111111111111111111',Caseheaders)
+                elif 'body' in str(key):
+                    # print(Casebody)
+                    if len(Casebody) != 0:
+                        # print('aaaaaaaaaaa',Casebody)
+                        Casebody = json.loads(Casebody)
+                        b = eval("""Casedeliverlist_s['%s']""" % keys[key])
+                        aaa = key.replace("['body']:", '')
+                        # print(aaa)
+                        exec('Casebody["%s"]=b' % aaa)
+                        Casebody = loc['Casebody']
+                    else:
+                        Casebody = None
 
-            elif 'url' in str(key):
-                print(key)
-                print('key',key)
-                print(Casedeliverlist_s)
-                print(keys[key])
-                print(Casedeliverlist_s['["data"]["result"][0]["monitor_data"]["id"]'])
-                b = eval("""Casedeliverlist_s['%s']""" % keys[key])
-                url = key.replace("['url']:", '')
-                print('这是啥',url)
-                Caseurl = Caseurl + '&%s'%url + '=' + b
-                # print('33333333',Caseurl)
+                elif 'url' in str(key):
+                    print(key)
+                    print('key',key)
+                    print(Casedeliverlist_s)
+                    print(keys[key])
+                    print(Casedeliverlist_s['["data"]["result"][0]["monitor_data"]["id"]'])
+                    b = eval("""Casedeliverlist_s['%s']""" % keys[key])
+                    url = key.replace("['url']:", '')
+                    print('这是啥',url)
+                    Caseurl = Caseurl + '&%s'%url + '=' + b
+                    # print('33333333',Caseurl)
+            except:
+                pass
         return Caseheaders,Caseurl,Casebody
 
 

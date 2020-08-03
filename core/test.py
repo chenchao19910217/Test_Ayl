@@ -45,41 +45,49 @@ from django.test import TestCase
 
 # Create your tests here.
 # -*- coding: utf-8 -*-
-import requests,json,urllib3,logging
+import requests,json,urllib3,logging,threading
 urllib3.disable_warnings()
 
+class MyThread(threading.Thread):
+    def __init__(self, thread_name):
+        super(MyThread, self).__init__(name=thread_name)
 
+    def run(self):
+        request = requests.Session()
+        url = 'https://api.douchacha.com/api/tiktok/monitor/live/live_list?ts=1596459224454&he=w7a%2Fwqlvw40MdzhMHdfCw43TML5fBzS4Sh%3D%3D&sign=3823e93f0a431077'
+        payload = {"page_no": 1, "page_size": 50,
+                   "params_data": {"nick_name": "", "status": ["ING", "WAIT", "SUCCESS", "CANCEL"]}}
+        header = {
+            'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiUEMiLCJleHAiOjE1OTcwNjM0ODYsInVzZXJJZCI6MTI4MjU3Njc5MjMwMjg0NTk1MywiY3JlYXRlRGF0ZSI6IjIwMjAtMDgtMDMgMjA6NDQ6NDYifQ.tX-1mZLWwd2ayqxLsCU4YP2uuyh30Ytj8JlWbg576Ao',
+            'd-t': '1596455855549',
+            'd-v': 'NCxaa1Z5WkhiakJkYll3b0hLdzUxMXdydlVuSGZsSG52VFBzZkR3cSUyRlVvaEFwYkhieXc1N1RNU3pUUEhiS3dxcER3NmRNZFRWVnc2RGljZGY3d3EwV2ZkYmp3b1A3d29NaWM4YmJ3N3pVcXNiNUlNWmp3NDlkd3I3VE9QQ1RPQk1XdzZDVExWWVV0aGREdzdPVW5PSE1ka1pNd3B6VHFIYnVnVTRNZGtWTXdvQ1RQOGZ1dzZPVG93JTNEJTNE',
+            'Content-Type': 'application/json;charset=UTF-8'}
 
+        response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
+
+        print(response.json())
 
 
 if __name__ == "__main__":
+    # for i in range(100000):
+    #     MyThread("thread-" + str(i)).start()
+
     request = requests.Session()
-    url = 'https://api.test.douchacha.com/api/user/login'
-    payload = {	"phone":"18730301074",	"password":"9f993dbea21fa110e9933965c5f968d37e0e42ea"}
+    # url = 'https://api.douchacha.com/api/user/login?ts=1596454744029&he=G2vTQ3GTulGTNjVwZHbcwqZrw4DwwoehwoL%3D&sign=ed68caf49871c9f6'
+    # payload = {"phone": "18730301074", "password": "9f993dbea21fa110e9933965c5f968d37e0e42ea"}
+    # header = {
+    #     "User-Agent": "Mozilla/5.0(WindowsNT10.0;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/83.0.4103.116Safari/537.36",
+    #     "Content-Type": "application/json;charset=UTF-8", "Content-Length": "80", "d-t": "1596454744029",
+    #     "d-v": "NCx3b1B5ZkhieHc3aCUyQndwSU13cHJUcjhiUndxNU1FZGZiWnhHVW5zYmR3N1VUb3glMkZUblNsOWYzdlVRaEtUbnNmcHdyeEF3ckNVcE9RMWFkYjNobkNUdGtHVHNsS1VzamtVdGRmd3c2clRzeEVrYWRiRWFkYnN3NmdVTE5VVU5kYmxTMkNVbU9ZVW5OR1V2WXZVTXh6VG9zYjN3cmFjQUhiYnc0QXU="}
+    # response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
+    #
+    # token = response.json()['data']['token']
+    # print(response.json())
 
-    header = {"User-Agent":"Mozilla/5.0(WindowsNT10.0;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/83.0.4103.116Safari/537.36","Accept-Encoding":"gzip,deflate","Accept":",*/*","Connection":"keep-alive","Content-Type":"application/json;charset=UTF-8","dcc-href":"https://api.douchacha.com/api/tiktok/monitor/live/live_list","dcc-r":"https://api.douchacha.com/api/tiktok/monitor/live/live_list","d-f":"df-dcc","Sec-Fetch-Dest":"empty","Sec-Fetch-Mode":"cors","Sec-Fetch-Site":"same-site","Content-Length":"80"}
+    url = 'https://api.douchacha.com/api/tiktok/monitor/live/live_list?ts=1596462497068&he=wrRJwrHLZkVxZHfcGQkUu8f2wp7ULHfzwoOUq8ft&sign=78a93e9010e085fb'
+    payload = {	"page_no":1,	"page_size":50,	"params_data":{		"nick_name":"",		"status":["ING","WAIT","SUCCESS","CANCEL"]	}}
+    header = {'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiUEMiLCJleHAiOjE1OTcwNjcwMTMsInVzZXJJZCI6MTI4MjU3Njc5MjMwMjg0NTk1MywiY3JlYXRlRGF0ZSI6IjIwMjAtMDgtMDMgMjE6NDM6MzMifQ.Su2AUulm665oIi7vjMRmKaVWKElMOnoo5Cb050zWksg', 'Content-Type': 'application/json;charset=UTF-8'}
+
     response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
-    print(response.json())
-    print(type(response.json()['data']['token']))
-    url = 'https://api.test.douchacha.com/api/tiktok/monitor/live/live_cancel?sign=df-dcc&monitorId=1288037877804048384'
-    # payload ={"page_no":1,"page_size":3,"params_data":{"keyword":"陈赫"}}
-    header = {
-            "Host": "api.test.douchacha.com",
-            "Connection": "keep-alive",
-            "Accept": "application/json,text/plain,*/*",
-            "d-f": "df-dcc",
-            "dcc-href": "https://test.douchacha.com/monitorlive",
-            "Authorization": response.json()['data']['token'],
-            "User-Agent": "Mozilla/5.0(WindowsNT10.0;WOW64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/83.0.4103.97Safari/537.36",
-            "dcc-r": "",
-            "Origin": "https://test.douchacha.com",
-            "Sec-Fetch-Site": "same-site",
-            "Sec-Fetch-Mode": "cors",
-            "Sec-Fetch-Dest": "empty",
-            "Referer": "https://test.douchacha.com/monitorlive",
-            "Accept-Encoding": "gzip,deflate,br",
-            "Accept-Language": "zh-CN,zh;q=0.9"
-        }
-    response = request.get(url, headers=header, verify=False)
 
-    print('aaaaaaaaa',response.json())
+    print(response.json())

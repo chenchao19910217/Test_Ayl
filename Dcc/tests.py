@@ -2,7 +2,7 @@ from django.test import TestCase
 
 # Create your tests here.
 # -*- coding: utf-8 -*-
-import requests,json,urllib3,logging,time
+import requests,json,urllib3,logging,time,asyncio
 urllib3.disable_warnings()
 
 
@@ -10,23 +10,29 @@ urllib3.disable_warnings()
 
 
 if __name__ == "__main__":
-    for num in range(100):
-        time.sleep(3)
-        request = requests.Session()
-        url = 'https://api.test.douchacha.com/api/user/login?ts=1596445561297&he=w5p9adfsw4rUosbBwpSAw67ULsfuik3UPMD%3D&sign=d5cd8369184a98ac'
-        payload = {	"phone":"18730301074",	"password":"9f993dbea21fa110e9933965c5f968d37e0e42ea"}
-        header = {"User-Agent":"Mozilla/5.0(WindowsNT10.0;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/83.0.4103.116Safari/537.36","Content-Type":"application/json;charset=UTF-8","Content-Length":"80"}
-        response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
-        print(response.json())
-        print(num)
-    # token=response.json()['data']['token']
-    # url ='https://api.test.douchacha.com/api/tiktok/monitor/live/live_list?ts=1596447205806&he=w6iaw4CUL1UUN8bXw78DAisrwopBA10%3D&sign=924692952d66d46f'
-    # payload = {	"page_no":1,	"page_size":50,	"params_data":{		"nick_name":"",		"status":["ING","WAIT","SUCCESS","CANCEL"]	}}
-    # header={"Host":"api.test.douchacha.com","Connection":"keep-alive","Content-Length":"59","Accept":"application/json,text/plain,*/*","dcc-r":"https://test.douchacha.com/","dcc-href":"https://test.douchacha.com/monitorlive",
-    #         "Authorization":response.json()['data']['token'],"User-Agent":"Mozilla/5.0(WindowsNT10.0;WOW64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/83.0.4103.97Safari/537.36","Content-Type":"application/json;charset=UTF-8","Origin":"https://test.douchacha.com","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"https://test.douchacha.com/monitorlive","Accept-Encoding":"gzip,deflate,br","Accept-Language":"zh-CN,zh;q=0.9"}
-    # response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
-    # print(response.json())
-    #
+
+    # for num in range(100):
+    #     time.sleep(1)
+    request = requests.Session()
+    url = 'https://api.douchacha.com/api/user/login?ts=1596454744029&he=G2vTQ3GTulGTNjVwZHbcwqZrw4DwwoehwoL%3D&sign=ed68caf49871c9f6'
+    payload = {"phone": "18730301074", "password": "9f993dbea21fa110e9933965c5f968d37e0e42ea"}
+    header = {
+        "User-Agent": "Mozilla/5.0(WindowsNT10.0;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/83.0.4103.116Safari/537.36",
+        "Content-Type": "application/json;charset=UTF-8", "Content-Length": "80", "d-t": "1596454744029",
+        "d-v": "NCx3b1B5ZkhieHc3aCUyQndwSU13cHJUcjhiUndxNU1FZGZiWnhHVW5zYmR3N1VUb3glMkZUblNsOWYzdlVRaEtUbnNmcHdyeEF3ckNVcE9RMWFkYjNobkNUdGtHVHNsS1VzamtVdGRmd3c2clRzeEVrYWRiRWFkYnN3NmdVTE5VVU5kYmxTMkNVbU9ZVW5OR1V2WXZVTXh6VG9zYjN3cmFjQUhiYnc0QXU="}
+    response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
+
+
+    token=response.json()['data']['token']
+    print(response.json())
+    url ='https://api.douchacha.com/api/tiktok/monitor/live/live_list?ts=1596455855549&he=w6iaw4CUL1UUN8bXw78DAisrwopBA10%3D&sign=36ba1717e49feaab'
+    payload = {	"page_no":1,	"page_size":50,	"params_data":{		"nick_name":"",		"status":["ING","WAIT","SUCCESS","CANCEL"]	}}
+    header={'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiUEMiLCJleHAiOjE1OTcwNjA2NTYsInVzZXJJZCI6MTI4MjU3Njc5MjMwMjg0NTk1MywiY3JlYXRlRGF0ZSI6IjIwMjAtMDgtMDMgMTk6NTc6MzYifQ.dWMxmFrPQ6Rb_yOq0CLt36_RsKopgTdEmQeuZLcLqtY',  'd-t': '1596455855549', 'd-v': 'NCxaa1Z5WkhiakJkYll3b0hLdzUxMXdydlVuSGZsSG52VFBzZkR3cSUyRlVvaEFwYkhieXc1N1RNU3pUUEhiS3dxcER3NmRNZFRWVnc2RGljZGY3d3EwV2ZkYmp3b1A3d29NaWM4YmJ3N3pVcXNiNUlNWmp3NDlkd3I3VE9QQ1RPQk1XdzZDVExWWVV0aGREdzdPVW5PSE1ka1pNd3B6VHFIYnVnVTRNZGtWTXdvQ1RQOGZ1dzZPVG93JTNEJTNE'}
+
+    response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
+
+    print(response.json())
+
     # print(response.json()["data"]["result"][0]["monitor_data"]["id"])
     # url='https://api.test.douchacha.com/api/tiktok/monitor/live/live_cancel?monitorId=%s' %response.json()["data"]["result"][0]["monitor_data"]["id"]
     # print(url)
