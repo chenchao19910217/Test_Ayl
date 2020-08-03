@@ -282,7 +282,7 @@
                     Caseuid=$(".Caseuid"+i).val();
                     let time_dt = new Date().getTime();
                     localStorage.setItem("dt",time_dt);
-                    console.log("a:"+typeof(time_dt));
+                    {#console.log("a:"+typeof(time_dt));#}
 
                     let s=Caseuid.length;
 
@@ -300,25 +300,35 @@
 
 
                     let paramUrl = '/api/' + $(".Caseurl"+i).val().split('/api/')[1];
-                    console.log(paramUrl)
+                    console.log('paramUrl',paramUrl)
+                    console.log('time_dt',time_dt)
+                    {#console.log(paramUrl)#}
                     let sign = paramUrl + time_dt;
                     let sh = window.sh(sign);
 
                     newcase.Casesign=sh;
                     newcase.Casedata=time_dt;
+                    {#let signTo64 = `${date}:${he}:${sh}`#}
+
+                    let signTo64 = newcase.Casedata+':'+newcase.Casehe+':'+sh;
+                    console.log(signTo64)
+                    newcase.df =window.btoa(signTo64)
+                    console.log('11111111111111111')
+                    console.log('11111111111111111',newcase.df)
+                    console.log("a:"+typeof(newcase.df));
+
 
                     newcase.Caseurl=$(".Caseurl"+i).val();
-
                     {#console.log($(".Caseurl"+i).val())#}
                     newcase.Caserequest=$(".Caserequest"+i).val();
                     newcase.Casebody=$(".Casebody"+i).val();
                     {#console.log($(".Casebody"+i).val())#}
 
-                    const headerToObj = JSON.parse($(".Caseheaders"+i).val())
+                    const headerToObj = JSON.parse($(".Caseheaders"+i).val());
                     headerToObj['d-t']=time_dt.toString();
 
                     try {
-                        let v = window.btoa(window.v() + ',' + window.hi())
+                        let v = window.btoa(window.v() + ',' + window.hi("dt"));
                         headerToObj['d-v']= v
                     } catch {
 
@@ -326,7 +336,7 @@
 
                     const headerStr = JSON.stringify(headerToObj)
 
-                    console.log(headerStr)
+                    {#console.log(headerStr)#}
 
                     {#console.log('d-t:',headerToObj['d-t']);#}
                     newcase.Caseheaders=headerStr;

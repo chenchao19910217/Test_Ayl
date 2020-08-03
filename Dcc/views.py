@@ -953,7 +953,6 @@ def case_on_edit(request):
 
         return render(request, 'Dcc/casediton.html', locals())
 
-
 @csrf_exempt
 @ensure_csrf_cookie
 def case_teston(request):
@@ -968,11 +967,10 @@ def case_teston(request):
         result = []
         print("线上测试--------------------")
         for case in caselist:
+            print('---------------------------------------------------------------------------------------------------')
             aaa=aaa+1
-
             resultcase = {'resultkey': '', 'Response': ''}
             Caserequest = caselist[case]['Caserequest']
-
             if Caserequest == 'POST':
                 Caseurl = caselist[case]['Caseurl']
                 Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
@@ -984,21 +982,8 @@ def case_teston(request):
                 Casesign = caselist[case]['Casesign'].replace(" ", "")
                 Casedata = caselist[case]['Casedata']
                 Casehe = caselist[case]['Casehe'].replace(" ", "")
-                print(Caseheaders)
-                print(Casesign)
-                print(Casehe)
-                # print('11123',Casehe,Casedata,Casesign)
                 Caseurl = Caseurl + '?ts=' + str(Casedata) + '&' + 'he=' + Casehe + '&' + 'sign=' + Casesign
-                # except:
-                #     Response = {
-                #         "code": '400',
-                #         "msg": '什么没填心理没数吗？'
-                #
-                #     }
-                #     return HttpResponse(json.dumps(Response))
-
                 if len(Caseurl)<1 or len(Caseheaders)<1 or len(Casebody)<1 :
-
                     Response={
                         "code": '400',
                         "msg": '搞什么呢url和headers都不填等我填呢？body也是必填！'
@@ -1006,33 +991,31 @@ def case_teston(request):
                         }
                     return HttpResponse(json.dumps(Response))
                 if len(Caseexpected)<1 or len(Casekey)<1 :
-
                     Response={
                         "code": '400',
                         "msg": '预期值和检查key不填你让我测啥！'
 
                         }
                     return HttpResponse(json.dumps(Response))
-
                 if len(Casereplace) > 0 and len(Casedeliver) > 0:
                     Casereplace = eval(Casereplace)
                     Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,Casebody, Casedeliverlist_s)
-
                     response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=Caseheaders, verify=False)
                     Response = response.json()
-
-
+                    Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
+                    keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
+                    loc = locals()
+                    for key in keys:
+                        exec("Casedeliverlist = Response%s" % key)
+                        Casedeliverlist_s[key] = loc['Casedeliverlist']
                 elif len(Casedeliver) > 0:
-                    print(json.loads(Caseheaders))
-                    print('555555',Caseurl)
                     response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=json.loads(Caseheaders), verify=False)
                     Response = response.json()
                     Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
                     keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
                     loc = locals()
-                    print(response.json())
                     for key in keys:
-                        print(key)
+
                         try:
                             exec("Casedeliverlist = Response%s" % key)
                             Casedeliverlist_s[key] = loc['Casedeliverlist']
@@ -1043,18 +1026,15 @@ def case_teston(request):
 
                             }
                             # return HttpResponse(json.dumps(Response))
-
                 elif len(Casereplace) > 0:
                     Casereplace = eval(Casereplace)
                     Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,
                                                                                Casebody, Casedeliverlist_s)
                     response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=Caseheaders, verify=False)
                     Response = response.json()
-                    print('8888888888888888',Response)
                 else:
                     response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=json.loads(Caseheaders), verify=False)
                     Response = response.json()
-
                 if len(Casekey) != 0 and len(Caseexpected) != 0:
                     try:
                         Caseexpected= Caseexpected.replace(" ", "")
@@ -1077,7 +1057,6 @@ def case_teston(request):
 
 
             elif Caserequest == 'GET':
-                # try:
                 Caseurl = caselist[case]['Caseurl']
                 Casebody = caselist[case]['Casebody'].replace("'", '"').replace(" ", "")
                 Caseheaders = caselist[case]['Caseheaders'].replace("'", '"').replace(" ", "")
@@ -1085,13 +1064,11 @@ def case_teston(request):
                 Caseexpected = caselist[case]['Caseexpected'].replace("'", '"').replace(" ", "")
                 Casedeliver = caselist[case]['Casedeliver'].replace(" ", "")
                 Casereplace = caselist[case]['Casereplace'].replace(" ", "")
-                # except:
-                #     Response = {
-                #         "code": '400',
-                #         "msg": '什么没填心理没数吗？'
-                #
-                #     }
-                #     return HttpResponse(json.dumps(Response))
+                Casedf=caselist[case]['df'].replace(" ", "")
+                Casesign = caselist[case]['Casesign'].replace(" ", "")
+                Casedata = caselist[case]['Casedata']
+                Casehe = caselist[case]['Casehe'].replace(" ", "")
+                Caseurl = Caseurl+'?'
                 if len(Caseurl)<1 or len(Caseheaders)<1:
 
                     Response={
@@ -1108,18 +1085,10 @@ def case_teston(request):
 
                         }
                     return HttpResponse(json.dumps(Response))
-
-
-                # print('ooooooooooooooooo', Casereplace)
-                # print('eeeeeeeeeeeeeeeee', Casedeliver)
-
                 if len(Casereplace) > 0 and len(Casedeliver)>0:
                     Casereplace = eval(Casereplace)
                     Caseheaders,Caseurl,Casebody=inerface_contrast.replace(Casereplace, Caseheaders, Caseurl, Casebody,Casedeliverlist_s)
-                    response = requests.get(Caseurl, headers=json.loads(Caseheaders), verify=False)
-                    Response = response.json()
-
-                elif len(Casedeliver)>0:
+                    Caseheaders['d-f'] = Casedf
                     response = requests.get(Caseurl, headers=json.loads(Caseheaders), verify=False)
                     Response = response.json()
                     Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
@@ -1128,23 +1097,37 @@ def case_teston(request):
                     for key in keys:
                         exec("Casedeliverlist = Response%s" % key)
                         Casedeliverlist_s[key] = loc['Casedeliverlist']
+                elif len(Casedeliver)>0:
+                    Caseheaders['d-f'] = Casedf
+                    response = requests.get(Caseurl, headers=json.loads(Caseheaders), verify=False)
+                    print('走到这里了',json.loads(Caseheaders))
+                    Response = response.json()
+                    Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
+                    keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
+                    loc = locals()
+                    for key in keys:
 
+                        try:
+                            exec("Casedeliverlist = Response%s" % key)
+                            Casedeliverlist_s[key] = loc['Casedeliverlist']
+                        except:
+                            Response = {
+                                "code": '400',
+                                "msg": '返回值没有相应透传参数' + str(Response)
+
+                            }
+                            # return HttpResponse(json.dumps(Response))
                 elif len(Casereplace) > 0:
                     Casereplace = eval(Casereplace)
-                    Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,
-                                                                               Casebody, Casedeliverlist_s)
+                    Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,Casebody, Casedeliverlist_s)
                     time.sleep(5)
-                    # print('222222222',Caseurl)
-                    response = requests.get(Caseurl, headers=Caseheaders, verify=False)
+                    Caseheaders['d-f']=Casedf
+                    response = requests.get(Caseurl, headers=Caseheaders, verify=False,timeout = 3)
                     Response = response.json()
-
                 else:
+                    Caseheaders['d-f'] = Casedf
                     response = requests.get(Caseurl, headers=json.loads(Caseheaders), verify=False)
-                    # print("wwwwwwwwwwwwwwwwwwwww",response.json())
                     Response = response.json()
-                    # return HttpResponse(json.dumps(result))
-
-
                 if len(Casekey) != 0 and len(Caseexpected) != 0:
                     try:
                         Caseexpected = eval(Caseexpected)
@@ -1194,7 +1177,6 @@ def caseapi_indexon(request):
                 'go':caselists[index].case_id
             }
     return render(request, 'Dcc/caseapi_indexon.html', locals())
-
 
 @csrf_exempt
 @ensure_csrf_cookie
@@ -1435,8 +1417,6 @@ def case_updateon(request):
         # print({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'})
         return HttpResponse(json.dumps({'code': '404', 'message': '请检查用例，项目，迭代版本，模块，case名是必填选项'}))
 
-
-
 @csrf_exempt
 @ensure_csrf_cookie
 def testlist_indexon(request):
@@ -1471,6 +1451,7 @@ def testlist_indexon(request):
                     Casekey = caselists[case]['Casekey']
                     Caseexpected = caselists[case]['Caseexpected']
                     Casedeliver = caselists[case]['Casedeliver']
+                    print('Casedeliver',Casedeliver)
                     Casereplace = caselists[case]['Casereplace']
                     resultcase['Caseexpected'] = Caseexpected
                     resultcase['Casereplace'] = Casereplace

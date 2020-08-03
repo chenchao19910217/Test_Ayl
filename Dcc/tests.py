@@ -2,7 +2,7 @@ from django.test import TestCase
 
 # Create your tests here.
 # -*- coding: utf-8 -*-
-import requests,json,urllib3,logging
+import requests,json,urllib3,logging,time
 urllib3.disable_warnings()
 
 
@@ -10,42 +10,46 @@ urllib3.disable_warnings()
 
 
 if __name__ == "__main__":
-    request = requests.Session()
-    url = 'https://api.test.douchacha.com/api/user/login?ts=1592989548316&he=wrEGbQ5swobCh3bCtw8swp7DgcOUw4DDtlFmbz91wq4zFg%3D%3D&sign=112bce861670e6af'
-    payload = {
-        "phone": "17710937860",
-        "password": "7e87d0177ef866685ec0f118771f406f64f497fb"
-    }
-    header = {
-        "s-id": "371",
-        "dcc-href": "https://www.douchacha.com/uppoint",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36",
-        "Content-Type": "application/json;charset=UTF-8",
-        "dcc-r": "https://www.douchacha.com/monitorlive",
-        "d-f": "MTU5Mjk4OTUwNDg3OTp3ckVHYlE1c3dvYkNoM2JDdHc4c3dwN0RnY09VdzRERHRsRm1iejkxd3E0ekZnJTNEJTNEOjI3MDAwNDU3Yjg5N2I2Yzg=",
-        "j-id": "1m73",
-        "Sec-Fetch-Site": "same-site",
-        "Sec-Fetch-Mode": "cors",
-        "Sec-Fetch-Dest": "empty"
-    }
-    response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
-    print(response.json())
+    for num in range(100):
+        time.sleep(3)
+        request = requests.Session()
+        url = 'https://api.test.douchacha.com/api/user/login?ts=1596445561297&he=w5p9adfsw4rUosbBwpSAw67ULsfuik3UPMD%3D&sign=d5cd8369184a98ac'
+        payload = {	"phone":"18730301074",	"password":"9f993dbea21fa110e9933965c5f968d37e0e42ea"}
+        header = {"User-Agent":"Mozilla/5.0(WindowsNT10.0;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/83.0.4103.116Safari/537.36","Content-Type":"application/json;charset=UTF-8","Content-Length":"80"}
+        response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
+        print(response.json())
+        print(num)
+    # token=response.json()['data']['token']
+    # url ='https://api.test.douchacha.com/api/tiktok/monitor/live/live_list?ts=1596447205806&he=w6iaw4CUL1UUN8bXw78DAisrwopBA10%3D&sign=924692952d66d46f'
+    # payload = {	"page_no":1,	"page_size":50,	"params_data":{		"nick_name":"",		"status":["ING","WAIT","SUCCESS","CANCEL"]	}}
+    # header={"Host":"api.test.douchacha.com","Connection":"keep-alive","Content-Length":"59","Accept":"application/json,text/plain,*/*","dcc-r":"https://test.douchacha.com/","dcc-href":"https://test.douchacha.com/monitorlive",
+    #         "Authorization":response.json()['data']['token'],"User-Agent":"Mozilla/5.0(WindowsNT10.0;WOW64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/83.0.4103.97Safari/537.36","Content-Type":"application/json;charset=UTF-8","Origin":"https://test.douchacha.com","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"https://test.douchacha.com/monitorlive","Accept-Encoding":"gzip,deflate,br","Accept-Language":"zh-CN,zh;q=0.9"}
+    # response = request.post(url, data=json.dumps(payload), headers=header, verify=False)
+    # print(response.json())
+    #
+    # print(response.json()["data"]["result"][0]["monitor_data"]["id"])
+    # url='https://api.test.douchacha.com/api/tiktok/monitor/live/live_cancel?monitorId=%s' %response.json()["data"]["result"][0]["monitor_data"]["id"]
+    # print(url)
+    # header={ 'Authorization': token,'d-t': '1596446363505', 'd-v': 'NCx3NXQ1aUhiZXc1T1RQc2YydzZQV3c3RTBoVUdVUVl6VVE4ZkN3NmNVdThmSGM4YlZhTnBKV2RmZHc3R1VvM1ZQd28lMkZVbmRieXc1elVOeG5UbkhmSnc0VVVvbkhNZFRXJTJCWmtWd1pCQ1R2ZGZmd3ByVHYzVkJkMyUyRlRtc2Zzd3BNclpkZjV3NTlIdzVETWR6ZE1CSGZzZXh6VE4zd01kemRNd28lMkZVTnNmbkp5VnplVFlVT2RmRndxY1VMUiUzRCUzRA==', 'd-f': 'MTU5NjQ0NzIwNTgwODp3NmlhdzRDVUwxVVVOOGJYdzc4REFpc3J3b3BCQTEwJTNEOjI2MWY4NDA2MWRlNmVhZWU='}
+    # response = request.get(url, headers=header, verify=False)
+    # print(response.json())
 
 
+    # url = 'https://api.test.douchacha.com/api/user/login_out'
+    # header = {
+    #                 "d-f": "MTU5NTkyMzA5MDQwMDpVc0szdzZBaE1UTWh3N0ljd3IwaE9TSENoRCUyRkRyTU9uRWpNVXdyeCUyRnc2a093NjAlMkJ3cjhRR0ElM0QlM0Q6MDA1M2NhODRiYWUxMGQ3OQ==",
+    #                 "dcc-href": "https://test.douchacha.com/workbench",
+    #                 "Authorization": response.json()['data']['token'],
+    #                 "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+    #                 "dcc-r": "",
+    #                 "Sec-Fetch-Site": "same-site",
+    #                 "Sec-Fetch-Mode": "cors",
+    #                 "Sec-Fetch-Dest": "empty"
+    #             }
+    # response = request.get(url, headers=header, verify=False)
+    # print(response.json())
 
-    url = 'https://api.test.douchacha.com/api/user/login_out'
-    header = {
-                    "d-f": "MTU5NTkyMzA5MDQwMDpVc0szdzZBaE1UTWh3N0ljd3IwaE9TSENoRCUyRkRyTU9uRWpNVXdyeCUyRnc2a093NjAlMkJ3cjhRR0ElM0QlM0Q6MDA1M2NhODRiYWUxMGQ3OQ==",
-                    "dcc-href": "https://test.douchacha.com/workbench",
-                    "Authorization": response.json()['data']['token'],
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-                    "dcc-r": "",
-                    "Sec-Fetch-Site": "same-site",
-                    "Sec-Fetch-Mode": "cors",
-                    "Sec-Fetch-Dest": "empty"
-                }
-    response = request.get(url, headers=header, verify=False)
-    print(response.json())
+
 
     # print(type(response.json()['data']['token']))
     # url = 'https://api.test.douchacha.com/api/user/info'

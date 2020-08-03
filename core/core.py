@@ -79,7 +79,7 @@ class Core():#核心复用方法
             return error
 
     def replace(self, keys, Caseheaders,Caseurl,Casebody,Casedeliverlist_s):  # ---------------------检查接口返回参数
-
+        print(Casedeliverlist_s)
         loc = locals()
         for key in keys:
             if 'header' in key:
@@ -108,10 +108,15 @@ class Core():#核心复用方法
                     Casebody = None
 
             elif 'url' in str(key):
-                # print(key)
+                print(key)
+                print('key',key)
+                print(Casedeliverlist_s)
+                print(keys[key])
+                print(Casedeliverlist_s['["data"]["result"][0]["monitor_data"]["id"]'])
                 b = eval("""Casedeliverlist_s['%s']""" % keys[key])
                 url = key.replace("['url']:", '')
-                Caseurl = Caseurl + '%s'%url + '=' + b
+                print('这是啥',url)
+                Caseurl = Caseurl + '&%s'%url + '=' + b
                 # print('33333333',Caseurl)
         return Caseheaders,Caseurl,Casebody
 
