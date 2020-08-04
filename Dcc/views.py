@@ -346,9 +346,11 @@ def testlist_index(request):
             case = models.apilist.objects.get(case_id=caselist[caseid])
             caselists=case.caselists.replace(r"\n", '').replace(" ", "").replace(r"\\", '')
             caselists=eval(caselists)
-            for case in caselists:
 
+            for case in caselists:
+                print(caselists[case])
                 Caserequest = caselists[case]['Caserequest']
+
                 if Caserequest == 'POST':
                     resultcase = {'resultkey': '', 'Response': '', 'url': '','Caseexpected':'','Casereplace':'','Casedeliver':''}
                     Caseurl = caselists[case]['Caseurl']
@@ -386,6 +388,13 @@ def testlist_index(request):
                         # print(type(Caseheaders))
                         response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=Caseheaders, verify=False)
                         Response = response.json()
+                        Casedeliverkeys = Casedeliver.replace('(', '').replace(')', '')
+                        keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
+                        loc = locals()
+                        for key in keys:
+                            print(key)
+                            exec("Casedeliverlist = Response%s" % key)
+                            Casedeliverlist_s[key] = loc['Casedeliverlist']
                         # print('len(Casereplace) > 0 and len(Casedeliver) > 0', Response)
 
                     elif len(Casedeliver) > 0:
@@ -395,6 +404,7 @@ def testlist_index(request):
                         keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
                         loc = locals()
                         for key in keys:
+                            print(key)
                             exec("Casedeliverlist = Response%s" % key)
                             Casedeliverlist_s[key] = loc['Casedeliverlist']
                         # print(Casedeliverlist_s)
@@ -435,6 +445,7 @@ def testlist_index(request):
                 elif Caserequest == 'GET':
                     resultcase = {'resultkey': '', 'Response': '', 'url': '','Caseexpected':'','Casereplace':'','Casedeliver':''}
                     Caseurl = caselists[case]['Caseurl']
+                    Caseurl = Caseurl + '?'
                     resultcase['url'] = Caseurl
                     Casebody = caselists[case]['Casebody']
                     Caseheaders = caselists[case]['Caseheaders']
@@ -467,6 +478,13 @@ def testlist_index(request):
                                                                                    Casebody, Casedeliverlist_s)
                         response = requests.get(Caseurl, headers=json.loads(Caseheaders), verify=False)
                         Response = response.json()
+                        keys = tuple([str(i) for i in Casedeliverkeys.split(',')])
+                        loc = locals()
+                        for key in keys:
+                            print(key)
+                            exec("Casedeliverlist = Response%s" % key)
+                            Casedeliverlist_s[key] = loc['Casedeliverlist']
+
 
                     elif len(Casedeliver) > 0:
                         response = requests.get(Caseurl, headers=json.loads(Caseheaders), verify=False)
