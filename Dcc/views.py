@@ -89,6 +89,7 @@ def case_test(request):
         result = []
         for case in caselist:
             aaa=aaa+1
+            print(case)
 
             resultcase = {'resultkey': '', 'Response': ''}
             Caserequest = caselist[case]['Caserequest']
@@ -1037,7 +1038,7 @@ def case_teston(request):
                     Casereplace = eval(Casereplace)
                     Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,Casebody, Casedeliverlist_s)
 
-                    response = requests.post(Caseurl, data=Casebody, headers=Caseheaders, verify=False)
+                    response = requests.post(Caseurl, data=Casebody.encode('utf-8'), headers=Caseheaders, verify=False)
                     # print('这里',Casebody)
                     # print('这里', Caseurl)
                     # print('这里', Caseheaders)
@@ -1164,10 +1165,13 @@ def case_teston(request):
                             # return HttpResponse(json.dumps(Response))
                 elif len(Casereplace) > 0:
                     Casereplace = eval(Casereplace)
+                    print('Casedeliverlist_s',Casedeliverlist_s)
                     Caseheaders, Caseurl, Casebody = inerface_contrast.replace(Casereplace, Caseheaders, Caseurl,Casebody, Casedeliverlist_s)
                     time.sleep(5)
                     Caseheaders['d-f']=Casedf
-                    response = requests.get(Caseurl, headers=Caseheaders, verify=False,timeout = 3)
+                    print('Caseurl',Caseurl)
+                    print('Caseheaders',Caseheaders)
+                    response = requests.get(Caseurl, headers=Caseheaders, verify=False,timeout=3)
                     Response = response.json()
                 else:
                     Caseheaders['d-f'] = Casedf
