@@ -24,15 +24,16 @@ class Selenium_PC(unittest.TestCase):
             PC首页登录功能，寻找首页登录按钮，账号登录，账号：15512090218 ，密码：cc123456x
         '''
         chrome_options = Options()
+        chrome_options.add_argument('no-sandbox')
         # 无头模式
-        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('headless')
         # 无头模式element不可交互问题
-        chrome_options.add_argument("--window-size=1920,1080")
+        # chrome_options.add_argument("window-size=1920,1080")
         # 初始化浏览器
         self.web_opt = webdriver.Chrome(options=chrome_options)
         # self.web_opt = webdriver.Chrome()
         # 请求首页
-        self.web_opt.get('https://test.douchacha.com')
+        self.web_opt.get('https://baidu.com')
         # 等待元素加载
         self.web_opt.implicitly_wait(3)
         try:

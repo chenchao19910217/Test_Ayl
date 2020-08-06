@@ -1,6 +1,6 @@
 FROM python:3.7
 WORKDIR /code
-ADD requirements.txt /code/
+ADD requirements.txt /code/requirements.txt
 RUN pip install --upgrade pip -i https://mirrors.aliyun.com/pypi/simple/
 RUN pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 ADD sources.list /etc/apt/sources.list
@@ -9,6 +9,7 @@ RUN apt-get install cron -yq
 COPY google-chrome-stable_current_amd64.deb /opt
 RUN apt-get install /opt/google-chrome* -yq
 ADD . /code
+RUN cp /code/chromedriver /usr/bin/
 CMD ["python","manage.py","runserver","0.0.0.0:8080"]
 
 #
