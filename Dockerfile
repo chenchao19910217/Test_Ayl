@@ -1,9 +1,7 @@
 FROM python:3.7
 WORKDIR /code
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-RUN deb http://dl.google.com/linux/deb/ stable main
+COPY google-chrome-stable_current_amd64.deb /opt
 RUN apt-get update
-RUN apt-get install google-chrome-stable
 ADD requirements.txt /code/
 RUN pip install --upgrade pip -i https://mirrors.aliyun.com/pypi/simple/
 RUN pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
