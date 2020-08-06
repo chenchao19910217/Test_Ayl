@@ -3,6 +3,10 @@ from django.urls import path
 
 from . import views
 
+from Test_Ayl import settings
+
+
+
 urlpatterns = [
     path('index/', views.index, name='index'),
     path('webyh/', views.yellowlab),
@@ -26,5 +30,5 @@ urlpatterns = [
     path('searchcaseon/',views.searchcaseon),
     path('case_updateon/',views.case_updateon),
     path('testlist_indexon/',views.testlist_indexon),
-
+    path('caseui/',views.caseui)
 ]

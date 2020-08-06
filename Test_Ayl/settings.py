@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -28,6 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CRONTAB_COMMAND_PREFIX = 'LANG_ALL=zh_cn.UTF-8'
+
 
 # Application definition
 
@@ -157,7 +157,12 @@ USE_TZ = False    # 这里修改了
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+DEV_URL = 'http://127.0.0.1:8000/'
+URL = 'http://39.105.45.46/'
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 5242800
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'Dcc/static/')
+# http://127.0.0.1:8000/static/bugpng/test_login20200806160441.png
 
 # 邮件服务配置文件
 EMAIL_USE_SSL = True
@@ -172,4 +177,5 @@ EMAIL_HOST_PASSWORD = 'ahovrotvonzibiei'
 # 发件人
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-CRONJOBS=[('*/1 * * * *', 'Dcc.cron.test','>>test.log')]
+#定时任务
+CRONJOBS=[('*/6 * * * *', 'Dcc.testui.cron.uitest','>>uitest.log')]

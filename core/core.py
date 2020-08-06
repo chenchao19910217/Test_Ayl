@@ -1,7 +1,11 @@
 import requests,json,re,os
 from django.core.mail import send_mail
+from django.core import mail
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'Test_Ayl.settings'
+from Test_Ayl import settings
+
+
 
 class Dict(dict):
     __setattr__ = dict.__setitem__
@@ -21,7 +25,11 @@ class Core():#核心复用方法
     def __init__(self):
         pass
 
-    def send_mail(self,Subject,content,sender,receiver):
+    def send_mail(self,content):
+        sender = '122903166@qq.com'
+        Subject = '来自www.douchacha.com的警告邮件'
+        receiver = ['diao.guanguan@aiyingli.com', '642229662@qq.com', 'juncai.xu@aiyingli.com',
+                    'zhiming.ren@aiyingli.com', 'chao.chen@aiyingli.com']
         send_mail(Subject,content,sender,receiver,)
         pass
 
@@ -136,8 +144,5 @@ if __name__ == "__main__":
 
 
     mail=Core()
-    Subject = '来自www.douchacha.com的测试邮件'
     content = 'BUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUGBUG'
-    sender = '122903166@qq.com'
-    receiver=['diao.guanguan@aiyingli.com', '642229662@qq.com']
-    mail.send_mail(Subject,content,sender,receiver)
+    mail.send_mail(content)

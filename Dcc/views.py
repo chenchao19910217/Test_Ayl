@@ -4,12 +4,16 @@ from django.shortcuts import redirect
 import requests,json,re,time,ast
 # Create your views here.
 import urllib3
+
+from Dcc.testui.dcc import Selenium_PC
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from django.http import HttpResponse
 from core.core import Core
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.csrf import ensure_csrf_cookie
 from . import models
+from Test_Ayl import settings
 def index(request):
     pass
     return render(request, 'login/index.html')
@@ -1668,3 +1672,18 @@ def testlist_indexon(request):
     request_code={'code': '200', 'message': '测试结束'}
 
     return HttpResponse(json.dumps(request_code))
+
+@csrf_exempt
+@ensure_csrf_cookie
+def caseui(request):
+    if request.method == 'POST':
+        code={"code":"200"}
+        return HttpResponse(json.dumps(code))
+    else:
+        a = request.GET.get('caseuiid')
+        casename = request.GET.get('casename')
+        DccPc = Selenium_PC()
+        DccPc.runTest()
+        code = {"code": "200"}
+        return HttpResponse(json.dumps(code))
+
