@@ -1,11 +1,12 @@
 FROM python:3.7
 WORKDIR /code
-COPY google-chrome-stable_current_amd64.deb /opt
-RUN apt-get update
 ADD requirements.txt /code/
 RUN pip install --upgrade pip -i https://mirrors.aliyun.com/pypi/simple/
 RUN pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+RUN apt-get update
 RUN apt-get install cron -yq
+COPY google-chrome-stable_current_amd64.deb /opt
+RUN apt-get install /opt/google-chrome* -yq
 ADD . /code
 CMD ["python","manage.py","runserver","0.0.0.0:8080"]
 

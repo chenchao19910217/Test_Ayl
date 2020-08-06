@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82a7e75e-d734-470c-895c-be224c7f3a09" name="Default Changelist" comment="" />
+    <list default="true" id="82a7e75e-d734-470c-895c-be224c7f3a09" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/google-chrome-stable_current_amd64.deb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/Dcc/testui/dcc.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -75,20 +80,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Test_Ayl/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+            <state relative-caret-position="267">
+              <caret line="94" column="13" lean-forward="true" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+            <state>
+              <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -96,8 +101,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="48" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+            <state relative-caret-position="150">
+              <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -201,16 +215,17 @@
         <option value="$PROJECT_DIR$/Dcc/testui/cron.py" />
         <option value="$PROJECT_DIR$/Dcc/urls.py" />
         <option value="$PROJECT_DIR$/Dcc/views.py" />
-        <option value="$PROJECT_DIR$/Test_Ayl/settings.py" />
         <option value="$PROJECT_DIR$/Dcc/testui/dcc.py" />
         <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/Test_Ayl/settings.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1440" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1541" />
+    <option name="y" value="23" />
     <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -223,21 +238,6 @@
           <expand>
             <path>
               <item name="Test_Ayl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test_Ayl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test_Ayl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test_Ayl" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test_Ayl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test_Ayl" type="462c0819:PsiDirectoryNode" />
-              <item name="Dcc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test_Ayl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test_Ayl" type="462c0819:PsiDirectoryNode" />
               <item name="Test_Ayl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -261,11 +261,11 @@
       <recent name="$PROJECT_DIR$/Dcc/templates/Dcc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Dcc/testui" />
       <recent name="$PROJECT_DIR$/Dcc" />
       <recent name="$PROJECT_DIR$/Dcc/static/bugpng" />
       <recent name="$PROJECT_DIR$/Dcc/static" />
-      <recent name="$PROJECT_DIR$/Dcc/media" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -450,7 +450,7 @@
       <workItem from="1596679370797" duration="1216000" />
       <workItem from="1596682462982" duration="2726000" />
       <workItem from="1596685461219" duration="4321000" />
-      <workItem from="1596693006256" duration="18063000" />
+      <workItem from="1596693006256" duration="21446000" />
     </task>
     <servers />
   </component>
@@ -487,7 +487,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="419708000" />
+    <option name="totallyTimeSpent" value="423091000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -499,7 +499,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="1541" y="23" width="1920" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924126" visible="true" weight="0.20074548" />
@@ -515,7 +515,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49946752" weight="0.32970297" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.33067092" side_tool="true" weight="0.42376238" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.66932905" visible="true" weight="0.34752476" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.66932905" visible="true" weight="0.39585492" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49840257" weight="0.32970297" />
       <window_info anchor="bottom" id="Structure" order="13" weight="0.24950495" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -788,13 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dcc/testui/test_login 20200806155020.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -892,17 +885,10 @@
     <entry file="file://$PROJECT_DIR$/Dcc/testui/dcc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test_Ayl/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -916,17 +902,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="48" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+        <state>
+          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        <state relative-caret-position="150">
+          <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test_Ayl/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="94" column="13" lean-forward="true" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
         </state>
       </provider>
     </entry>
