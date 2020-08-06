@@ -10,7 +10,7 @@ services:
     image:
       test_aly:latest
     volumes:
-      - /volumes/sqlite:/code/db
+      - /Volumes/sqlite:/code/db
 
 
 #  test_crontab:

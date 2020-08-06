@@ -3,6 +3,7 @@ WORKDIR /code
 ADD requirements.txt /code/
 RUN pip install --upgrade pip -i https://mirrors.aliyun.com/pypi/simple/
 RUN pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+ADD sources.list /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install cron -yq
 COPY google-chrome-stable_current_amd64.deb /opt
