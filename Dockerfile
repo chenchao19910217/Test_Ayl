@@ -1,6 +1,6 @@
 FROM python:3.7
 WORKDIR /code
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN deb http://dl.google.com/linux/deb/ stable main
 RUN apt-get update
 RUN apt-get install google-chrome-stable
